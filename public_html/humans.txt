@@ -8,13 +8,10 @@
   Twitter: @lukekarrys
   Location: Arizona
 
-/* THANKS */
-  Names (& URL):
-
 /* SITE */
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
-  Software:
+  Software: Textmate, iTerm2
 
 
 
