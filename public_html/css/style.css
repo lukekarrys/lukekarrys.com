@@ -60,9 +60,9 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #ccc; text-decoration:none; }
+a { color: #666; text-decoration:none; }
 a:visited { color: #666; }
-a:hover { color: #06e; }
+a:hover { color: #06e !important; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -103,7 +103,7 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-h1 {font-family: 'Bowlby One', sans-serif;color:white;font-size:2em;line-height:1.5em;width:12em;text-shadow:-2px -2px 2px #000;margin:1em 0 0 2em;}
+h1 {font-family: 'Bowlby One', sans-serif;}
 
 /* =============================================================================
    Lists
@@ -216,11 +216,16 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+#content, body, html {height: 100%; width: 100%; overflow: hidden;}
+
+#title {position: absolute; color:white;font-weight: 100;
+  top: 1%; left: 2%; text-align: left; font-size:2em;line-height:1.5em;width:96%;margin:0;text-shadow: -2px -2px 2px #000;}
 
 
+#payme { font-family: 'PT Sans', sans-serif; text-shadow:none;line-height:1.2em;font-size:1.5em;
+text-align:right;font-weight: bold;position:absolute;bottom:0px;right:1%;width:98%; color: #fff;text-shadow: -1px -1px 2px #000;}
 
-
-
+#payme a {text-shadow: none;font-weight:100;color:#000}
 
 
 
@@ -237,14 +242,11 @@ td { vertical-align: top; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
-
-}
-
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
-
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  #title {font-size:1.5em;}
+  #payme {font-size:1em;}
 }
 
 
