@@ -103,7 +103,7 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-h1 {font-family: 'Bowlby One', sans-serif;color:white;font-size:6em;text-shadow:-2px -2px 2px #000;margin:1em;}
+h1 {font-family: 'Bowlby One', sans-serif;color:white;font-size:2em;line-height:1.5em;width:12em;text-shadow:-2px -2px 2px #000;margin:1em 0 0 2em;}
 
 /* =============================================================================
    Lists
