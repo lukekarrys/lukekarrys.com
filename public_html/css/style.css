@@ -34,7 +34,11 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 html {
-        background: url(../img/jump.jpg) no-repeat top center fixed;
+        background: transparent;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top center;
+        background-image: url(../img/jump.jpg);
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
