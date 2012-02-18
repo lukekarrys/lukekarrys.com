@@ -9,25 +9,25 @@
     'jump': {position: 'top center'}
   };
 
-$(function() {
-  $(window).hashchange( function() {
-    var k = location.hash.replace('#', '').toLowerCase(),
-        src = 'jump',
-        pos = v[src].position;
+  $(function() {
+    $(window).hashchange( function() {
+      var k = location.hash.replace('#', '').toLowerCase(),
+          src = 'jump',
+          pos = v[src].position;
         
-    if (typeof v[k] !== 'undefined') {
-      src = k;
-      pos = v[k].position;
-    }
+      if (typeof v[k] !== 'undefined') {
+        src = k;
+        pos = v[k].position;
+      }
     
-    $('html').css({
-      'background-image': 'url(../img/'+src+'.jpg)',
-      'background-position': pos
+      $('html').css({
+        'background-image': 'url(../img/'+src+'.jpg)',
+        'background-position': pos
+      });
     });
-  });
   
-  $(window).hashchange();
-});
+    $(window).hashchange();
+  });
 
 })(jQuery);
 
