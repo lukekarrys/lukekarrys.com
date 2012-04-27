@@ -241,6 +241,20 @@ background-color: transparent;
 
 #payme a {text-shadow: none;font-weight:100;color:#000}
 
+#jason-ed { position: absolute; bottom: -125px; left: 20px; width: 150px;
+  
+  -webkit-transition:bottom 1s ease-in 2s;
+     -moz-transition:bottom 1s ease-in 2s;
+     -o-transition:bottom 1s ease-in 2s;
+     transition:bottom 1s ease-in 2s;
+  
+  
+  }
+  
+#payme:hover #jason-ed {
+  bottom: -2px;
+}
+
 
 
 
