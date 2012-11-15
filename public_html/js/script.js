@@ -20,7 +20,7 @@
         pos = v[k].position;
       }
     
-      $('html').css({
+      $('#bg').css({
         'background-image': 'url(../img/'+src+'.jpg)',
         'background-position': pos
       });

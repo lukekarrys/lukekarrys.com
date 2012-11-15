@@ -33,7 +33,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-html {
+#bg {
         background: transparent;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -42,6 +42,11 @@ html {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        -webkit-filter:  grayscale(0.4) blur(4px);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
 }
 
 
@@ -230,7 +235,7 @@ header {
   background-color: rgba(0, 0, 0, 0.6);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000); /* IE6–IE9 */
   zoom: 1;
-  z-index:1;
+  z-index:3;
 }
 
 header .description {
@@ -239,7 +244,7 @@ header .description {
   font-size:2em;
   line-height:1.5em;
   text-shadow: -2px -2px 2px #000;
-  z-index:2;
+  z-index:4;
   padding: 0;
 }
 
@@ -247,10 +252,11 @@ header .description li {
   display: block;
 }
 
+#content {z-index: 2;}
 
 
 #title {
-   font-size:2em;line-height:1.5em;margin:0;text-shadow: -2px -2px 2px #000;z-index:2;
+   font-size:2em;line-height:1.5em;margin:0;text-shadow: -2px -2px 2px #000;z-index:5;
 }
 
 
