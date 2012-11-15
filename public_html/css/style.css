@@ -236,6 +236,8 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000); /* IE6–IE9 */
   zoom: 1;
   z-index:3;
+  top: 50%;
+  margin-top: -25%;
 }
 
 header .description {
@@ -285,11 +287,17 @@ background-color: transparent;
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-width : 320px) and (max-width : 480px) {
   #title, header .description {font-size:1.2em;}
   #payme {font-size:1em;}
   header .description li {display: inline;}
+  header {top: 0; margin-top: 0;}
 }
+
+@media only screen and (max-width : 880px) {
+  header .description li {display: inline;}
+}
+
 
 
 
