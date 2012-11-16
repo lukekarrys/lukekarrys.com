@@ -227,7 +227,7 @@ td { vertical-align: top; }
 #content, body, html {height: 100%; width: 100%; overflow: hidden; position: relative;}
 
 header {
-  position: absolute;font-weight: 100;color:#fff;
+  position: fixed;font-weight: 100;color:#fff;
   padding: 2% 4% 2% 4%;
   width:93%;
   text-align: left;
@@ -236,8 +236,7 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000); /* IE6–IE9 */
   zoom: 1;
   z-index:3;
-  top: 50%;
-  margin-top: -25%;
+  top: 15%;
 }
 
 header .description {
