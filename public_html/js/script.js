@@ -1,6 +1,5 @@
-/* Author:
+/*global window location jQuery */
 
-*/
 (function($) {
   
   var v = {
@@ -27,8 +26,7 @@
     });
   
     $(window).hashchange();
+
   });
 
 })(jQuery);
-
-
