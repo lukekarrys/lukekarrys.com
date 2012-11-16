@@ -227,12 +227,12 @@ td { vertical-align: top; }
 #content, body, html {height: 100%; width: 100%; overflow: hidden; position: relative;}
 
 header {
-  position: fixed;font-weight: 100;color:#fff;
+  position: absolute;font-weight: 100;color:#fff;
   padding: 2% 4% 2% 4%;
   width:93%;
   text-align: left;
   background-color: transparent;
-  background-color: rgba(0, 0, 0, 0.6);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
+  background-color: rgba(255, 255, 255, 0.3);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000,endColorstr=#B2000000); /* IE6–IE9 */
   zoom: 1;
   z-index:3;
@@ -244,7 +244,6 @@ header .description {
   margin: 0;
   font-size:2em;
   line-height:1.5em;
-  text-shadow: -2px -2px 2px #000;
   z-index:4;
   padding: 0;
 }
@@ -257,19 +256,26 @@ header .description li {
 
 
 #title {
-   font-size:3em;line-height:1.5em;margin:0;text-shadow: -2px -2px 2px #000;z-index:5;font-weight: 100;
+   font-size:3em;line-height:1.5em;margin:0;z-index:5;font-weight: 100;
 }
 
 
 #payme { font-family: 'PT Sans', sans-serif; text-shadow:none;line-height:1.2em;font-size:1.5em;
-text-align:right;font-weight: bold;position:absolute;bottom:0px;padding: 1% 2% 1% 1%;width:98%; color: #fff;text-shadow: -1px -1px 2px #000;
+text-align:right;font-weight: bold;position:absolute;bottom:0px;padding: 1% 2% 1% 1%;width:98%; color: #fff;
 background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.5);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
+  background-color: rgba(255, 255, 255, 0.3);  /* FF3+, Saf3+, Opera 10.10+, Chrome, IE9 */
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2FFFFFF,endColorstr=#B2FFFFFF); /* IE6–IE9 */
             zoom: 1;
 }
 
-#payme a {text-shadow: none;font-weight:100;color:#000}
+#title {
+  text-shadow: -1px -1px 2px #000;
+}
+header .description, #payme {
+  text-shadow: -1px -1px 1px #000;
+}
+
+#payme a {font-weight:100;color:#fff}
 
 
 
@@ -287,9 +293,11 @@ background-color: transparent;
    ========================================================================== */
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
-  #title, header .description {font-size:1.2em;}
+  #title {font-weight:bold;}
+  #title, header .description {font-size:1.3em;}
   #payme {font-size:1em;}
   header .description li {display: inline;}
+  header .description, #title, #payme {text-shadow: -1px -1px 1px #000;}
   header {top: 0; margin-top: 0;}
 }
 
