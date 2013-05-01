@@ -20,7 +20,7 @@
       }
     
       $('#bg').css({
-        'background-image': 'url(/lukekarrys.com/img/'+src+'.jpg)',
+        'background-image': 'url(../img/'+src+'.jpg)',
         'background-position': pos
       });
     });
