@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How much water should I use in my coffee?</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {padding-top: 15px}
+    .buttons a {margin-bottom: 5px;}
+    label {margin-top: 3px;}
+    label:last-child {margin-bottom: 0}
+    .row-space {margin-bottom: 10px;}
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <p class="buttons">
+                    <a class="btn btn-default btn-success btn-lg" href="#" data-value="18" id="weak">Weak</a>
+                    <a class="btn btn-default btn-primary btn-lg" href="#" data-value="16" id="good">Good</a>
+                    <a class="btn btn-default btn-danger btn-lg" href="#" data-value="13" id="strong">Strong</a>
+                    <br>
+                    <a class="btn btn-default btn-info btn-lg" href='#' id='dinah'>Dinah</a>
+                    <a class="btn btn-default btn-info btn-lg" href='#' id='luke'>Luke</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+        <form class="col-xs-12" role="form">
+
+            <div class="form-group well well-sm col-xs-12">
+                <div class="row row-space">
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <input id="basePartsCoffee" class="form-control text-center ratioInput input-lg" type="text" placeholder="1" data-orig-value="1">
+                        <span class="input-group-addon btn btn-default spinup">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                        </span>
+                        <span class="input-group-addon btn btn-default spindown">
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <label for="basePartsCoffee" class="text-center col-lg-3 col-sm-2 control-label">
+                    parts coffee to
+                </label>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <input id="basePartsWater" class="form-control text-center ratioInput input-lg" type="text" placeholder="16" data-orig-value="16" data-min-value="13" data-max-value="18">
+                        <span class="input-group-addon btn btn-default spinup">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                        </span>
+                        <span class="input-group-addon btn btn-default spindown">
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </span>
+                    </div>
+                </div>
+                <label for="basePartsWater" class="text-left col-lg-3 col-sm-2 control-label">
+                    parts water.
+                </label>
+                </div>
+
+                <div class="row">
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <input id="mgCoffee" class="form-control text-center ratioInput input-lg" type="text" placeholder="15" data-orig-value="15">
+                        <span class="input-group-addon btn btn-default spinup">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                        </span>
+                        <span class="input-group-addon btn btn-default spindown">
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <label for="mgCoffee" class="text-center col-lg-3 col-sm-2 control-label">
+                    grams coffee to
+                </label>
+
+                <div class="col-lg-3 col-sm-4">
+                    <div class="input-group">
+                        <input id="ozWater" class="form-control text-center ratioInput input-lg" type="text" placeholder="8.47" data-orig-value="8.47">
+                        <span class="input-group-addon btn btn-default spinup">
+                            <span class="glyphicon glyphicon-arrow-up"></span>
+                        </span>
+                        <span class="input-group-addon btn btn-default spindown">
+                            <span class="glyphicon glyphicon-arrow-down"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <label for="ozWater" class="text-left col-lg-3 col-sm-2 control-label">
+                    oz water.
+                </label>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <footer class="text-center">
+            <hr>
+            <p>All credit to <a href="http://chriscorwin.com/coffee-water-ratio-calculator/" target="_blank">Chris Corwin</a>.
+        </footer>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+    var $theForm = $('#ratioForm');
+    var doMathBase = function doMathBase($thisElement) {
+        var basePartsCoffee = $('#basePartsCoffee').val();
+        var basePartsWater = $('#basePartsWater').val();
+
+        var mgCoffee = $('#mgCoffee').val();
+        var ozWater = $('#ozWater').val();
+        var mgWater = parseFloat(ozWater) * 28.3495;
+
+        var thisElementId = $thisElement.attr('id');
+
+        if (thisElementId == 'basePartsCoffee') {
+            basePartsWater = Math.round(basePartsCoffee * mgWater) / mgCoffee;
+            $('#basePartsWater').val(basePartsWater);
+        } else if (thisElementId == 'ozWater') {
+            mgCoffee = Math.round(mgWater / basePartsWater) * basePartsCoffee;
+            $('#mgCoffee').val(mgCoffee);
+        } else if (thisElementId == 'mgCoffee' || thisElementId == 'basePartsWater') {
+            ozWater = ((Math.round(mgCoffee * basePartsWater) / basePartsCoffee) / 28.3495).toFixed(2);
+            $('#ozWater').val(ozWater);
+        }
+    }
+
+    var resetForm = function resetForm() {
+        $('#basePartsCoffee').val($('#basePartsCoffee').attr('data-orig-value'));
+        $('#mgCoffee').val($('#mgCoffee').attr('data-orig-value'));
+        $('#basePartsWater').val($('#basePartsWater').attr('data-orig-value'));
+        $('#ozWater').val($('#ozWater').attr('data-orig-value'));
+    };
+
+    $(function() {
+        $('.spinup, .spindown').on('click', function(event) {
+            var $input = $(this).parent().find('.ratioInput');
+            var val = $(this).hasClass('spinup') ? 1 : -1;
+            $input.val(parseFloat($input.val()) + val);
+            doMathBase($input);
+        });
+
+        $('#weak, #strong, #good').on('click', function (event) {
+            $('#basePartsWater').val($(event.target).data('value'));
+            doMathBase($('#ozWater'));
+            return false;
+        });
+
+        $('#luke').on('click', function (event) {
+            $('#basePartsWater').val(13);
+            $('#ozWater').val(14);
+            doMathBase($('#ozWater'));
+            return false;
+        });
+
+        $('#dinah').on('click', function (event) {
+            $('#basePartsWater').val(16);
+            $('#ozWater').val(9);
+            doMathBase($('#ozWater'));
+            return false;
+        });
+
+        $('.ratioInput').on('keyup', function(event) {
+            var $theInput = $(this);
+            doMathBase($theInput);
+        }).on('change', function(event) {
+            var $theInput = $(this);
+            doMathBase($theInput);
+        }).on('blur', function(event) {
+            var $theInput = $(this);
+            if ($theInput.val() == "") {
+                $theInput.val($theInput.attr('data-orig-value'));
+                doMathBase($theInput);
+            }
+        }).on('focus', function(event) {
+            var $theInput = $(this);
+            $theInput.select();
+        }).on('mouseup', function(event) {
+            var $theInput = $(this);
+            event.preventDefault();
+        }).after('<span/>');
+
+        resetForm();
+    });
+    </script>
+
+</body>
+
+</html>
