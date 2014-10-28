@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="coffee.appcache">
 
 <head>
     <meta charset="utf-8">
@@ -144,7 +144,7 @@
             ozWater = ((Math.round(mgCoffee * basePartsWater) / basePartsCoffee) / 28.3495).toFixed(2);
             $('#ozWater').val(ozWater);
         }
-    }
+    };
 
     var resetForm = function resetForm() {
         $('#basePartsCoffee').val($('#basePartsCoffee').attr('data-orig-value'));
@@ -189,7 +189,7 @@
             doMathBase($theInput);
         }).on('blur', function(event) {
             var $theInput = $(this);
-            if ($theInput.val() == "") {
+            if ($theInput.val() === "") {
                 $theInput.val($theInput.attr('data-orig-value'));
                 doMathBase($theInput);
             }
