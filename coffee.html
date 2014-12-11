@@ -15,6 +15,8 @@
     <title>How much water should I use in my coffee?</title>
 
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/fastclick.js"></script>
     <style>
     body {padding-top: 15px}
     .buttons a {margin-bottom: 5px;}
@@ -78,7 +80,7 @@
                     parts water.
                 </label>
                 </div>
-
+                <hr>
                 <div class="row">
                 <div class="col-lg-3 col-sm-4">
                     <div class="input-group">
@@ -124,6 +126,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script>
+    Origami.fastclick(document.body);
     var $theForm = $('#ratioForm');
     var doMathBase = function doMathBase($thisElement) {
         var basePartsCoffee = $('#basePartsCoffee').val();

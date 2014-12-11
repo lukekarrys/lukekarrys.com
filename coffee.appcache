@@ -1,7 +1,8 @@
 CACHE MANIFEST
-# v2.3 - 2014-12-11
+# 2014-12-11T12:54:43.000Z
 coffee.html
 http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
 http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
 http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.woff
+js/fastclick.js
 img/coffee/icon_512.png
