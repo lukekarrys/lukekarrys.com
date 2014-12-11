@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Coffee/Water">
 
     <link rel="shortcut icon" sizes="196x196" href="img/coffee/icon_512.png">
@@ -34,8 +34,7 @@
                     <a class="btn btn-default btn-primary btn-lg" href="#" data-value="16" id="good">Good</a>
                     <a class="btn btn-default btn-danger btn-lg" href="#" data-value="13" id="strong">Strong</a>
                     <br>
-                    <a class="btn btn-default btn-info btn-lg" href='#' id='dinah'>Dinah</a>
-                    <a class="btn btn-default btn-info btn-lg" href='#' id='luke'>Luke</a>
+                    <a class="btn btn-default btn-info btn-lg" href='#' id='mug-o-good'>Mug-o-Good</a>
                 </p>
             </div>
         </div>
@@ -167,16 +166,9 @@
             return false;
         });
 
-        $('#luke').on('click', function (event) {
-            $('#basePartsWater').val(13);
-            $('#ozWater').val(14);
-            doMathBase($('#ozWater'));
-            return false;
-        });
-
-        $('#dinah').on('click', function (event) {
+        $('#mug-o-good').on('click', function (event) {
             $('#basePartsWater').val(16);
-            $('#ozWater').val(9);
+            $('#ozWater').val(10);
             doMathBase($('#ozWater'));
             return false;
         });
