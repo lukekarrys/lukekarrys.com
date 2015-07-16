@@ -1,0 +1,179 @@
+@import 'normalize';
+@import 'h5bp';
+@import '../node_modules/colors.css/less/_variables';
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+    min-height: 100%;
+    position: relative;
+}
+
+
+// ==========================================================================
+// Vars
+// ==========================================================================
+
+@footer-height: 100vh;
+
+
+// ==========================================================================
+// Type and spacing
+// ==========================================================================
+
+body {
+    color: @silver;
+    font: 16px/26px 'Noto Serif', serif;
+    margin: 0 0 @footer-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+h1 {margin-bottom: 0.67em;}
+h2 {margin: 0.4em 0;}
+p {margin: 0 0 0.4em 0;}
+
+
+// ==========================================================================
+// Content section stlye/spacing
+// ==========================================================================
+
+#bg {
+    background: transparent;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    background-image: url(/bg.jpg);
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.inner-content {
+    box-shadow:
+        inset 1px 5px 9px -6px rgba(0, 0, 0, 1),
+        inset 1px -5px 9px -7px rgba(0, 0, 0, 1);
+}
+
+.main {
+    .inner-content {
+        margin-top: 16vh;
+        padding: 20px 5%;
+    }
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: @footer-height;
+    width: 100%;
+
+    .inner-content {
+        text-align: right;
+        padding: 18px 5%;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+
+// ==========================================================================
+// Links
+// ==========================================================================
+
+a {
+    transition: color .3s, background-color .3s;
+    &:active {
+        transition: color .3s, background-color .3s;
+    }
+    &.title-link {
+        font-weight: 700;
+        padding: 0 2px;
+        text-decoration: none;
+    }
+}
+
+
+// ==========================================================================
+// Style different sections colors w/ link+text color
+// ==========================================================================
+
+.color-section (@bg, @link, @text: #ddd) {
+    color: @text;
+    background: fade(@bg, 90%);
+    a {
+        &:link, &:visited {
+            color: @link;
+        }
+        &:hover {
+            color: darken(@link, 10%);
+        }
+
+        &.title-link {
+            &:link, &:visited {
+                background-color: @link;
+                color: @bg;
+            }
+            &:hover {
+                background-color: darken(@link, 10%);
+            }
+        }
+    }
+}
+
+.color-green {
+    .color-section(@green, @yellow);
+}
+
+.color-blue {
+    .color-section(@blue, @navy);
+}
+
+.color-red {
+    .color-section(@orange, @maroon);
+}
+
+
+// ==========================================================================
+// Projects
+// ==========================================================================
+
+.project {
+    margin-top: 0.7em;
+    padding-top: 0.7em;
+    border-top: 1px solid #FFDC00;
+    &:last-child {
+        border-bottom: 1px solid #ffDC00;
+        padding-bottom: 0.7em;
+    }
+}
+
+
+// ==========================================================================
+// Utils
+// ==========================================================================
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}

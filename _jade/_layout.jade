@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+
+  head
+
+    meta(charset='utf-8')
+
+    title lukekarrys
+
+    meta(name='viewport', content='width=device-width,initial-scale=1.0')
+    meta(name='description', content='My name is Luke. We should be friends.')
+    meta(name='keywords', content='Luke Karrys, lukekarrys')
+    meta(name='author', content='Luke Karrys')
+
+    script(type='text/javascript', src='https://use.fonticons.com/1e09dd44.js')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:100,700')
+    link(rel='stylesheet', href='/css/main.min.css')
+
+    <!--[if lt IE 9]>
+    script(type='text/javascript', src='//html5shiv.googlecode.com/svn/trunk/html5.js')
+    script.
+      window.html5 || document.write('<script src="/vendor/html5shiv.js"><\/script>')
+    <![endif]-->
+
+  body
+    #bg
+    .wrapper.main.clearfix
+      block content
+    footer.wrapper
+      .inner-content.color-red
+        .float-left
+          h4 Fun fact: that's me writing my vows on my wedding day
+        .float-right
+          h4
+            | Get in touch: 
+            a.title-link(href="mailto:luke@lukekarrys.com") luke@lukekarrys.com
+            |  or 
+            a.title-link(href="https://twitter.com/lukekarrys") @lukekarrys
+
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-8402584-7','auto');ga('send','pageview');

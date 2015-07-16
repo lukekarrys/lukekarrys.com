@@ -1,0 +1,79 @@
+extends ./_layout.jade
+
+mixin project(data)
+  .project
+    p
+      if data.gh
+        a(href="https://github.com/" + data.gh): i.icon.icon-github-square.icon-lg
+        | 
+      if data.blog
+        a(href=data.blog): i.icon.icon-pencil-square.icon-lg
+        | 
+      if data.link
+        a(href=data.link): i.icon.icon-external-link-square.icon-lg
+        | 
+      block
+
+mixin module(gh)
+  li
+    a(href="https://github.com/" + gh): i.icon.icon-github-square.icon-lg
+    block
+
+block content
+  .inner-content.color-blue
+    h1 My name is Luke
+
+    p I <a href="http://github.com/lukekarrys">love open source</a> and work at <a href="http://andyet.com">&yet</a>.
+
+    p I also like to <a href="http://lukelov.es">share thoughts</a>, <a href="http://lukecod.es">write about code</a> and <a href="http://www.rdio.com/people/lukekarrys/">listen</a> to <a href="http://www.last.fm/user/formatfanatic">music</a>.
+
+    p I like to <a href="http://lukekarrys.github.io/talks/">talk</a> and <a href="https://pinboard.in/u:lukekarrys">collect cool parts of the Internet</a>.
+
+    p When I'm not sitting down, I like to <a href="http://nikeplus.nike.com/plus/profile/IamArunner/">run</a> and <a href="http://www.strava.com/athletes/1920700">ride my bike</a>.
+
+  .inner-content.color-green
+    h1 Projects
+    +project({gh: 'tweetyourbracket/tweetyourbracket.com', blog: 'http://lukecod.es/2014/01/25/tweet-your-bracket/', link: 'http://tweetyourbracket.com'})
+      | I run a NCAA Bracket Challenge that requires you to tweet your entry. I call it, get this, <a class="title-link" href="http://tweetyourbracket.com">Tweet Your Bracket</a>! It's a whole big thing, so I made <a href="https://github.com/tweetyourbracket">a GitHub org</a> around it.
+
+    +project({gh: 'lukekarrys/gifchess.club', link: 'http://gifchess.club'})
+      | Imagine if someone took an unflattering picture of you every time your played a chess move. That's the <a class="title-link" href="http://gifchess.club">GifChess Club</a>! A finalist at the <a href="http://2015.staticshowdown.com/winners">2015 Static Showdown</a> and I published some of the <a href="https://github.com/lukekarrys/ampersand-chess-state">base</a> <a href="https://github.com/lukekarrys/ampersand-chess-view">components</a> separately.
+
+    +project({gh: 'https://github.com/lukekarrys/universal-static-instagram', link: 'http://usi.website'})
+      | Host your own static Instagram site with <a class="title-link" href="http://usi.website">USI</a>! Why? Well, <a href="https://github.com/lukekarrys/universal-static-instagram#what-is-this">reasons</a>. Built to be a fully universal (aka isomorphic) JS app with React and Webpack. I think it's pretty neat.
+
+    +project({gh: 'https://github.com/lukekarrys/emojifortun.es', link: 'http://emojifortun.es'})
+      | Emojis are important. We all know that. <a class="title-link" href="http://emojifortun.es">Emoji Fortunes</a> really drives that point home. Featured on <a href="http://time.com/99827/emoji-fortune-cookies/">time.com</a> and <a href="http://www.washingtonpost.com/news/the-intersect/wp/2014/05/17/25-internet-gems-you-mightve-missed-this-week/">washingtonpost.com</a> (on a listicle of weekly Internet gems right after pictues of babies with drawn on eyebrows, so yeah, I've made it).
+
+    +project({gh: 'https://github.com/lukekarrys/emojihaik.us', link: 'http://emojihaik.us'})
+      | If you thought I would only have one emoji related project, then you'd be wrong. The less popular (although I think much cooler) sister of Emoji Fortunes is <a class="title-link" href="http://emojihaik.us">Emoji Haikus</a>! Also it's built on the same <a href="https://github.com/lukekarrys/emoji-named-characters">two</a> <a href="https://github.com/lukekarrys/random-emoji">modules</a> which basically single-handedly validates the tiny modules philosophy.
+
+    +project({gh: 'https://github.com/lukekarrys/geohashing-ios'})
+      | <a class="title-link" href="">Geohashing</a>, introduced by <a href="https://xkcd.com/426/">xkcd #26</a>, is a spontaneous adventure generator based on the stock market and md5 and graticules (oh my!). I've been fascinated by it since it was announced in 2008, but it took until 2015 for me to write <a href="https://github.com/lukekarrys/geohash-cli">the CLI I wanted</a> to find the day's coordinates (and the other <a href="https://github.com/lukekarrys/djia">underlying</a> <a href="https://github.com/lukekarrys/hex-frac-dec-frac">parts</a> <a href="https://github.com/lukekarrys/geo-graticule ">of the</a> <a href="https://github.com/lukekarrys/geohash-coordinates">rules</a>), and I'm currently using those to build <a href="https://github.com/lukekarrys/geohashing-ios">an iOS app</a> with React Native. That is exactly as cool as it sounds.
+
+    +project({gh: 'https://github.com/lukekarrys/npm-v0-finder', blog: 'http://lukecod.es/2014/08/15/finding-all-your-npm-v0-packages/', link: 'http://lukekarrys.github.io/npm-v0-finder/'})
+      | If you've been releasing modules on npm for awhile (especially if you started before <a href="http://blog.npmjs.org/post/98131109725/npm-2-0-0">npm@2.0.0</a>) you might have a bunch of modules at v0.x.y and you might want to change that. Well I did, so I made the <a class="title-link" href="http://lukekarrys.github.io/npm-v0-finder/">npm-v0-finder</a> (catchy, I know) to help from the offending modules. Note that this was awhile ago and now npm lists <a href="https://www.npmjs.com/~lukekarrys">all versions on a user's page</a>.
+
+    +project({gh: 'https://github.com/lukekarrys/awesome', link: 'http://who.lukelov.es'})
+      | Tell someone they are <a class="title-link" href="http://who.lukelov.es/everything">Awesome</a>! Hackily served at all paths of the domain by using a GitHub Pages custom 404 page, but if there's one thing I've learned, it's that it's OK to abuse HTTP for single page novelty sites.
+
+    +project({gh: 'https://github.com/lukekarrys/R2D2', blog: 'http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/'})
+      | One time I spent a few weeks figuring out Asterisk and ordering parts so I could make a socket.io signaling server ring my <a class="title-link" href="http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/">R2-D2</a> telephone. It remains one of my proudest achievements that I never use.
+
+    +project({gh: 'https://github.com/lukekarrys/dinahandluke.com', link: 'http://dinahandluke.com'})
+      | My sappy <a class="title-link" href="http://dinahandluke.com/their-story">wedding website</a>, but it has probably my favorite scrolling animation I've done (plus it was one of the best days of my life so I'm proud of it).
+
+  .inner-content.color-green
+    h1 Other Modules
+    p As I said above, I love open source so I have a bunch of other modules. I try to publish everything to npm with good docs and put the source on GitHub. In fact, I've only ever had one private GitHub repo, and that was <a href="https://github.com/lukekarrys/dinahandluke.in">the website I used to ask my wife to marry me</a> (she said yes, so I was able to open source it the next month).
+
+    ul
+      +module('lukekarrys/spa-crawler')
+      +module('lukekarrys/local-links')
+      +module('lukekarrys/js-size')
+        | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size.
+      +module('lukekarrys/lodash-replacer')
+      +module('lukekarrys/hid-mapper')
+      +module('lukekarrys/less-import-inserter')
+      +module('lukekarrys/lessitizer')
+      +module('lukekarrys/gh-streak')
