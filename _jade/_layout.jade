@@ -24,18 +24,19 @@ html(lang='en')
 
   body
     #bg
-    .wrapper.main.clearfix
+    main.wrapper.clearfix
       block content
     footer.wrapper
-      .inner-content.color-red
-        .float-left
-          h4 Fun fact: that's me writing my vows on my wedding day
-        .float-right
-          h4
-            | Get in touch: 
-            a.title-link(href="mailto:luke@lukekarrys.com") luke@lukekarrys.com
-            |  or 
-            a.title-link(href="https://twitter.com/lukekarrys") @lukekarrys
+      .inner-content.color-green
+        .column
+          .float-left
+            h4 Fun fact: that's me writing my vows on my wedding day
+          .float-right
+            h4
+              | Get in touch: 
+              a.title-link(href="mailto:luke@lukekarrys.com") luke@lukekarrys.com
+              |  or 
+              a.title-link(href="https://twitter.com/lukekarrys") @lukekarrys
 
     script.
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

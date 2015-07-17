@@ -21,7 +21,6 @@ html {
 
 @footer-height: 100vh;
 
-
 // ==========================================================================
 // Type and spacing
 // ==========================================================================
@@ -38,7 +37,11 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-h1 {margin-bottom: 0.67em;}
+h1 {
+    font-size: 3em;
+    line-height: 1.1em;
+    margin-bottom: 0.5em;
+}
 h2 {margin: 0.4em 0;}
 p {margin: 0 0 0.4em 0;}
 
@@ -64,16 +67,40 @@ p {margin: 0 0 0.4em 0;}
     width: 100%;
 }
 
-.inner-content {
-    box-shadow:
-        inset 1px 5px 9px -6px rgba(0, 0, 0, 1),
-        inset 1px -5px 9px -7px rgba(0, 0, 0, 1);
+@gutter: 100px;
+.column (@width) {
+    @media only screen and (min-width: @width) {
+        max-width: @width - (@gutter / 2);
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
-.main {
+.inner-content {
+    -webkit-backdrop-filter: blur(5px);
+    border-top: 1px solid fade(@black, 40%);
+    border-bottom: 1px solid fade(@black, 40%);
+    box-shadow:
+        inset 1px 5px 9px -6px @black,
+        inset 1px -5px 9px -7px @black;
+
+    .column {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+
+        .column(480px);
+        .column(768px);
+        .column(920px);
+        .column(1140px);
+    }
+}
+
+main {
     .inner-content {
         margin-top: 16vh;
-        padding: 20px 5%;
+        padding-top: 3em;
+        padding-bottom: 3em;
     }
 }
 
@@ -86,7 +113,8 @@ footer {
 
     .inner-content {
         text-align: right;
-        padding: 18px 5%;
+        padding-top: 18px;
+        padding-bottom: 18px;
         position: absolute;
         width: 100%;
         bottom: 0;
@@ -95,7 +123,7 @@ footer {
 
 
 // ==========================================================================
-// Links
+// Links/content sections
 // ==========================================================================
 
 a {
@@ -108,6 +136,21 @@ a {
         padding: 0 2px;
         text-decoration: none;
     }
+}
+
+.list-item {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid;
+    box-shadow: inset 1px 5px 12px -10px rgba(0,0,0,0.6);
+    &:last-child {
+        border-bottom: 1px solid;
+        padding-bottom: 1em;
+        box-shadow:
+            inset 1px 5px 12px -10px rgba(0,0,0,0.6),
+            inset 1px -5px 12px -10px rgba(0,0,0,0.6);
+    }
+    p:last-child {margin-bottom: 0;}
 }
 
 
@@ -136,6 +179,9 @@ a {
             }
         }
     }
+    .list-item {
+        border-color: @link;
+    }
 }
 
 .color-green {
@@ -148,21 +194,6 @@ a {
 
 .color-red {
     .color-section(@orange, @maroon);
-}
-
-
-// ==========================================================================
-// Projects
-// ==========================================================================
-
-.project {
-    margin-top: 0.7em;
-    padding-top: 0.7em;
-    border-top: 1px solid #FFDC00;
-    &:last-child {
-        border-bottom: 1px solid #ffDC00;
-        padding-bottom: 0.7em;
-    }
 }
 
 
