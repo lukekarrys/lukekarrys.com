@@ -1,44 +1,30 @@
 extends ./_layout.jade
 
-mixin project(data)
-  .list-item
-    p
-      if data.gh
-        a(href="https://github.com/" + data.gh): i.icon.icon-github-square.icon-lg
-        | 
-      if data.blog
-        a(href=data.blog): i.icon.icon-pencil-square.icon-lg
-        | 
-      if data.link
-        a(href=data.link): i.icon.icon-external-link-square.icon-lg
-        | 
-      block
+include ./_mixins.jade
 
-mixin module(gh)
-  .list-item
-    a(href="https://github.com/" + gh): i.icon.icon-github-square.icon-lg
-    | 
-    block
-
-mixin section(color)
-  .inner-content(class='color-' + color)
-    .column
-      block
 
 block content
   +section('blue')
-    h1 My name is Luke
+    h1 Hi, my name is Luke
 
-    p I <a href="http://github.com/lukekarrys">love open source</a> and work at <a href="http://andyet.com">&yet</a>.
+    +intro()
+      | I love <a href="http://github.com/lukekarrys">open</a> <a href="https://www.npmjs.com/~lukekarrys">source</a> and work at <a href="http://andyet.com">&yet</a>.
 
-    p I also like to <a href="http://lukelov.es">share thoughts</a>, <a href="http://lukecod.es">write about code</a> and <a href="http://www.rdio.com/people/lukekarrys/">listen</a> to <a href="http://www.last.fm/user/formatfanatic">music</a>.
+    +intro()
+      | I also like to <a href="http://lukelov.es">share thoughts</a>, <a href="http://lukecod.es">write about code</a> and <a href="http://www.rdio.com/people/lukekarrys/">listen</a> to <a href="http://www.last.fm/user/formatfanatic">music</a>.
 
-    p I like to <a href="http://lukekarrys.github.io/talks/">talk</a> and <a href="https://pinboard.in/u:lukekarrys">collect cool parts of the Internet</a>.
+    +intro()
+      | I like to <a href="http://lukekarrys.github.io/talks/">talk</a> and <a href="https://pinboard.in/u:lukekarrys">collect cool parts of the Internet</a>.
 
-    p When I'm not sitting down, I like to <a href="http://nikeplus.nike.com/plus/profile/IamArunner/">run</a> and <a href="http://www.strava.com/athletes/1920700">ride my bike</a>.
+    +intro()
+      | When I'm not sitting down, I like to <a href="http://nikeplus.nike.com/plus/profile/IamArunner/">run</a> and <a href="http://www.strava.com/athletes/1920700">ride my bike</a>.
+
 
   +section('blue')
-    h1 Projects
+    h1 I make projects
+
+    p My philosophy around side-projects tries to walk the intersection of fun, useless, and interesting. For all of these, I've put far more work into them than people who have used them, and I'm really proud of that.
+
     +project({gh: 'tweetyourbracket/tweetyourbracket.com', blog: 'http://lukecod.es/2014/01/25/tweet-your-bracket/', link: 'http://tweetyourbracket.com'})
       | I run a NCAA Bracket Challenge that requires you to tweet your entry. I call it, get this, <a class="title-link" href="http://tweetyourbracket.com">Tweet Your Bracket</a>! It's a whole big thing, so I made <a href="https://github.com/tweetyourbracket">a GitHub org</a> around it.
 
@@ -66,21 +52,42 @@ block content
     +project({gh: 'https://github.com/lukekarrys/R2D2', blog: 'http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/'})
       | One time I spent a few weeks figuring out Asterisk and ordering parts so I could make a socket.io signaling server ring my <a class="title-link" href="http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/">R2-D2</a> telephone. It remains one of my proudest achievements that I never use.
 
+    +project({gh: 'https://github.com/lukekarrys/coffee.lukekarrys.com', link: 'http://coffee.lukekarrys.com'})
+      | I love <a class="title-link" href="http://coffee.lukekarrys.com">coffee</a>. Also an old place I lived had terrible Internet in the kitchen. This confluence led to adapting an existing coffee ratio calculator for my needs, which were custom presets for my wife and I, and an appcache file so it worked offline.
+
     +project({gh: 'https://github.com/lukekarrys/dinahandluke.com', link: 'http://dinahandluke.com'})
-      | My sappy <a class="title-link" href="http://dinahandluke.com/their-story">wedding website</a>, but it has probably my favorite scrolling animation I've done (plus it was one of the best days of my life so I'm proud of it).
+      | My sappy <a class="title-link" href="http://dinahandluke.com/their-story">wedding website</a> has probably my favorite scrolling animation I've done (plus it was one of the best days of my life so I'm proud of it).
+
+
 
   +section('blue')
     h1 Other Modules
-    p As I said above, I love open source so I have a bunch of other modules. I try to publish everything to npm with good docs and put the source on GitHub. In fact, I've only ever had one private GitHub repo, and that was <a href="https://github.com/lukekarrys/dinahandluke.in">the website I used to ask my wife to marry me</a> (she said yes, so I was able to open source it the next month).
+
+    p As I said above, I love open source so I have created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to <a href="https://www.npmjs.com/~lukekarrys">npm</a> with good docs and put the source on <a href="https://github.com/lukekarrys?tab=repositories">GitHub</a>. In fact, I've only ever had one private GitHub repo, and that was <a href="https://github.com/lukekarrys/dinahandluke.in">the website I used to ask my wife to marry me</a>. These are the interesting ones:
 
     +module('lukekarrys/spa-crawler')
+      | Single page apps (or native web apps as I like to call them now), don't lend themselves to crawlers very well since the markup is generated clientside. <a class="title-link" href="https://github.com/lukekarrys/spa-crawler">spa-crawler</a> is built on <a href="https://github.com/jed/rndr.me">rndr.me</a> which renders the clientside markup and that is used to crawl the site for internal links and produces a list of all urls and content in the whole site. I've used this to archive old single page apps into a set of html files that could be hosted without any sort of server side routing.
 
     +module('lukekarrys/local-links')
-      | Browsers have quirks. Some of those quirks are around looking at links within a page and determining when to override them if you're building a native web app. <a class="title-link">local-links</a> wants to be your friend and not make you think about those quirks ever again. Has automated tests for the supported browser matrix so I know when I break stuff (which I've done before).
+      | Browsers have quirks. Some of those quirks are around looking at links within a page and determining when to override them if you're building a native web app. <a class="title-link" href="https://github.com/lukekarrys/local-link">local-links</a> wants to be your friend and not make you think about those quirks ever again. Has automated tests for the supported browser matrix so I know when I break stuff (which I've done before).
+
     +module('lukekarrys/js-size')
-      | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size.
-    +module('lukekarrys/lodash-replacer')
+      | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link" href="https://github.com/lukekarrys/js-size">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size.
+
     +module('lukekarrys/hid-mapper')
-    +module('lukekarrys/less-import-inserter')
-    +module('lukekarrys/lessitizer')
+      | <a href="https://github.com/carldanley/node-gamepad">node-gamepad</a> is a great module for using various gamepads within node. I had some 3rd party SNES and N64 controllers laying around but the library didn't support them at the time. I wrote <a class="title-link" href="https://github.com/lukekarrys/hid-mapper">hid-mapper</a> as a CLI tool to take any controller and map the siginals sent from each button/joystick to a JSON config file that can be consumed by node-gamepad. Please use this to take a a USB gamepad and fly a drone with it.
+
+    +module('lukekarrys/lessitizer', 'lukekarrys/less-import-inserter')
+      | <a href="http://lesscss.org/">less</a> is my preferred CSS preprocessor so I wrote <a class="title-link" href="http://github.com/lukekarrys/lessitizer">lessitizer</a> and <a class="title-link" href="http://github.com/lukekarrys/less-import-inserter">less-import-inserter</a>. Together they handle taking a less file containing a list of imports (like <a href="https://github.com/twbs/bootstrap/blob/66543ed112e9344d59eba343e3a45200e3ebd839/less/bootstrap.less">Boostrap</a>) and inserting new imports to do things like override variables and mixins, and then packaging that along with your app's less into a css file or string.
+
+    +module('lukekarrys/git-directory-deploy')
+      | I love GitHub Pages, but there can be a few annoyances around my normal workflow of developing a site in a master branch, complining static files to a directory and then pushing that directory to a gh-pages branch. <a class="title-link" href="http://github.com/lukekarrys/git-directory-deploy">git-directory-deploy</a> is really just a wrapper for <a href="https://github.com/X1011/git-directory-deploy">the original shell script</a> that fit my criteria, and adapted to be npm installable to fit my usual workflow.
+
+    +module('lukekarrys/moonboots-static', 'lukekarrys/moonboots-express')
+      | <a href="https://github.com/HenrikJoreteg/moonboots">moonboots</a> is a tool I've contributed to for streamlining a set of conventions for the server side of building native web apps. <a class="title-link" href="http://github.com/lukekarrys/moonboots-static">moonboots-static</a> and <a class="title-link" href="http://github.com/lukekarrys/moonboots-express">moonboots-express</a> are two plugins I wrote for moonboots to wrap those conventions in my usual workflow of a simple dev server and then writing a directory of static files. This all uses <a href="http://browserify.org/">browserify</a> under the hood, but I've really been enjoying <a href="webpack.github.io">webpack</a> lately, so moonboots isn't my primary tool for this anymore.
+
+    +module('lukekarrys/simple-realurl')
+      | Url shorteners are so 2008, now we want to make urls longer. <a class="title-link" href="http://github.com/lukekarrys/simple-realurl">simple-realurl</a> aims to get the real url for any shortened url.
+
     +module('lukekarrys/gh-streak')
+      | <a class="title-link" href="https://github.com/lukekarrys/gh-streak">gh-streak</a> is CLI/node tool to get you current streak of days with a GitHub contribtion excluding any private repos (which GitHub includes if you are logged in). This saves me a few seconds of opening an incognito window whenever I get curious about whether I need to take a break from open source.

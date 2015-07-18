@@ -67,12 +67,19 @@ p {margin: 0 0 0.4em 0;}
     width: 100%;
 }
 
-@gutter: 100px;
-.column (@width) {
+.fixed-column (@width, @gutter: 200px) {
     @media only screen and (min-width: @width) {
         max-width: @width - (@gutter / 2);
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+.fluid-column (@width, @gutter) {
+    @media only screen and (min-width: @width) {
+        max-width: auto;
+        padding-left: @gutter / 2;
+        padding-right: @gutter / 2;
     }
 }
 
@@ -85,22 +92,26 @@ p {margin: 0 0 0.4em 0;}
         inset 1px -5px 9px -7px @black;
 
     .column {
-        padding-left: 20px;
-        padding-right: 20px;
         margin: 0 auto;
-
-        .column(480px);
-        .column(768px);
-        .column(920px);
-        .column(1140px);
+        .fluid-column(0px, 40px);
+        .fluid-column(480px, 10%);
+        .fixed-column(768px, 154px);
+        .fixed-column(920px);
+        .fixed-column(1140px);
     }
 }
 
 main {
     .inner-content {
-        margin-top: 16vh;
+        margin-top: 25vh;
         padding-top: 3em;
         padding-bottom: 3em;
+        &:first-child {
+            margin-top: 0;
+            @media only screen and (min-width: 768px) {
+                margin-top: 25vh;
+            }
+        }
     }
 }
 
@@ -118,6 +129,17 @@ footer {
         position: absolute;
         width: 100%;
         bottom: 0;
+
+        .footer-column {
+            text-align: center;
+            @media only screen and (min-width: 920px) {
+                text-align: left;
+                float: left;
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
     }
 }
 
@@ -194,17 +216,4 @@ a {
 
 .color-red {
     .color-section(@orange, @maroon);
-}
-
-
-// ==========================================================================
-// Utils
-// ==========================================================================
-
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
 }

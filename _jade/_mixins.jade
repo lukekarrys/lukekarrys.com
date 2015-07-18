@@ -1,0 +1,30 @@
+mixin intro()
+  p
+    block
+
+mixin project(data)
+  .list-item
+    p
+      if data.gh
+        a(href="https://github.com/" + data.gh): i.icon.icon-github-square.icon-lg
+        | 
+      if data.blog
+        a(href=data.blog): i.icon.icon-pencil-square.icon-lg
+        | 
+      if data.link
+        a(href=data.link): i.icon.icon-external-link-square.icon-lg
+        | 
+      block
+
+mixin module(gh)
+  .list-item
+    - gh = Array.isArray(gh) ? gh : [gh]
+    for link in gh
+      a(href="https://github.com/" + link): i.icon.icon-github-square.icon-lg
+      | 
+    block
+
+mixin section(color)
+  .inner-content(class='color-' + color)
+    .column
+      block
