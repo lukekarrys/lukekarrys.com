@@ -1,5 +1,6 @@
 extends ./_layout.jade
+include ./_mixins.jade
 
 block content
-  .inner-content
-    This page doesn't exist. There is only the <a href="/">homepage</a>.
+  +section('blue')
+    h1 This page doesn't exist.<br/>There is only the <a href="/">homepage</a>.
