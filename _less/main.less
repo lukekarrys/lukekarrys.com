@@ -51,16 +51,15 @@ p {margin: 0 0 0.4em 0;}
 // ==========================================================================
 
 #bg {
-    background: transparent;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: top center;
+    background: url(/bg.jpg);
     background-size: cover;
     height: 100%;
     width: 100%;
+    position: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     z-index: -1;
-    position: absolute;
-    background-image: url(/bg.jpg);
 }
 
 .wrapper {
