@@ -6,10 +6,10 @@ block content
     h1 Hi, my name is Luke
 
     +intro()
-      | I love <a href="http://github.com/lukekarrys">open</a> <a href="https://www.npmjs.com/~lukekarrys">source</a> and work at <a href="https://andyet.com/team/luke">&yet</a>. 
+      | I love <a href="http://github.com/lukekarrys">open</a> <a href="https://www.npmjs.com/~lukekarrys">source</a> and work at <a href="https://andyet.com/team/luke">&yet</a>.
 
     +intro()
-      | I spend some of my Internet time <a href="https://pinboard.in/u:lukekarrys">collecting neat parts of it</a>, <a href="https://instagram.com/luke.karrys">'gramming</a>, and <a href="https://twitter.com/lukekarrys">tweeting</a> (check out the <a href="http://tweets.lukekarrys.com/">deep cuts</a>).
+      | I spend some of my Internet time <a href="https://pinboard.in/u:lukekarrys">collecting the neat parts</a>, <a href="https://instagram.com/luke.karrys">'gramming</a>, and <a href="https://twitter.com/lukekarrys">tweeting</a> (check out the <a href="http://tweets.lukekarrys.com/">deep cuts</a>).
 
     +intro()
       | I also like to <a href="http://lukelov.es">share thoughts</a>, <a href="http://lukecod.es">write about code</a>, <a href="https://www.goodreads.com/user/show/23127585-luke">read</a>, <a href="http://lukekarrys.github.io/talks/">talk</a>, and <a href="http://www.rdio.com/people/lukekarrys/">listen</a> to <a href="http://www.last.fm/user/formatfanatic">music</a>.
@@ -23,11 +23,11 @@ block content
 
     p My philosophy around personal projects tries to walk the intersection of fun, useless, and interesting. For all of these, I've put far more work into them than people who have used them, and I'm really proud of that.
 
-    +project({name: 'tweetyourbracket.com', gh: 'tweetyourbracket/tweetyourbracket.com', blog: 'http://lukecod.es/2014/01/25/tweet-your-bracket/', link: 'http://tweetyourbracket.com'})
+    +project({name: 'tweetyourbracket.com', gh: 'tweetyourbracket/tweetyourbracket.com', blog: 'http://lukecod.es/2014/01/25/tweet-your-bracket/', link: 'http://tweetyourbracket.com', tw: 'tweetthebracket'})
       | I run a NCAA Bracket Challenge that requires you to tweet your entry. I call it, get this, <a class="title-link" href="http://tweetyourbracket.com">Tweet Your Bracket</a>! It's a whole big thing, so I made <a href="https://github.com/tweetyourbracket">a GitHub org</a> around it.
 
     +project({name: 'gifchess.club', gh: 'lukekarrys/gifchess.club', link: 'http://gifchess.club'})
-      | Imagine if someone took an unflattering picture of you every time your played a chess move. That's the <a class="title-link" href="http://gifchess.club">GifChess Club</a>! A finalist at the <a href="http://2015.staticshowdown.com/winners">2015 Static Showdown</a> and I published some of the <a href="https://github.com/lukekarrys/ampersand-chess-state">base</a> <a href="https://github.com/lukekarrys/ampersand-chess-view">components</a> separately.
+      | Imagine if someone took an unflattering picture of you every time your played a chess move. That's the <a class="title-link" href="http://gifchess.club">GifChess Club</a>! A finalist at the <a href="http://2015.staticshowdown.com/winners">2015 Static Showdown</a> and I published the base component for the <a href="https://github.com/lukekarrys/ampersand-chess-state">state</a> and the <a href="https://github.com/lukekarrys/ampersand-chess-view">view</a> separately.
 
     +project({name: 'usi', gh: 'lukekarrys/universal-static-instagram', link: 'http://usi.website'})
       | Host your own static Instagram site with <a class="title-link" href="http://usi.website">USI</a>! Why? Well, <a href="https://github.com/lukekarrys/universal-static-instagram#what-is-this">reasons</a>. Built to be a fully universal (aka isomorphic) JS app with React and Webpack. I think it's pretty neat.
@@ -38,8 +38,8 @@ block content
     +project({name: 'emojihaik.us', gh: 'lukekarrys/emojihaik.us', link: 'http://emojihaik.us'})
       | If you thought I would only have one emoji related project, then you'd be wrong. The less popular (although I think much cooler) sister of Emoji Fortunes is <a class="title-link" href="http://emojihaik.us">Emoji Haikus</a>! Also it's built on the same <a href="https://github.com/lukekarrys/emoji-named-characters">two</a> <a href="https://github.com/lukekarrys/random-emoji">modules</a> which basically single-handedly validates the tiny modules philosophy.
 
-    +project({name: 'geohashing', gh: 'lukekarrys/geohashing-ios'})
-      | <a class="title-link" href="">Geohashing</a>, introduced by <a href="https://xkcd.com/426/">xkcd #26</a>, is a spontaneous adventure generator based on the stock market and md5 and graticules (oh my!). I've been fascinated by it since it was announced in 2008, but it took until 2015 for me to write the <a href="https://github.com/lukekarrys/geohash-cli">CLI I wanted</a> to find the day's coordinates (and the other <a href="https://github.com/lukekarrys/djia">underlying</a> <a href="https://github.com/lukekarrys/hex-frac-dec-frac">parts</a> <a href="https://github.com/lukekarrys/geo-graticule ">of the</a> <a href="https://github.com/lukekarrys/geohash-coordinates">rules</a>), and I'm currently using those to build <a href="https://github.com/lukekarrys/geohashing-ios">an iOS app</a> with React Native. That is exactly as cool as it sounds.
+    +project({name: 'geohashing cli + iOS', gh: ['lukekarrys/geohash-cli', 'lukekarrys/geohashing-ios'], npm: 'geohash-cli'})
+      | Geohashing, introduced by <a href="https://xkcd.com/426/">xkcd #26</a>, is a spontaneous adventure generator based on the stock market and md5 and graticules (oh my!). I've been fascinated by it since it was announced in 2008, but it took until 2015 for me to write a <a class="title-link" href="https://github.com/lukekarrys/geohash-cli">geohashing CLI</a> and React Native <a class="title-link" href="https://github.com/lukekarrys/geohashing-ios">iOS app</a>to find the day's coordinates. This is exactly as cool as it sounds. Both projects are backed by the <a href="https://github.com/lukekarrys/djia">same</a> <a href="https://github.com/lukekarrys/hex-frac-dec-frac">set</a> <a href="https://github.com/lukekarrys/geo-graticule ">of</a> <a href="https://github.com/lukekarrys/geohash-coordinates">modules</a>.
 
     +project({name: 'npm-v0-finder', gh: 'lukekarrys/npm-v0-finder', blog: 'http://lukecod.es/2014/08/15/finding-all-your-npm-v0-packages/', link: 'http://lukekarrys.github.io/npm-v0-finder/'})
       | If you've been releasing modules on npm for awhile (especially if you started before <a href="http://blog.npmjs.org/post/98131109725/npm-2-0-0">npm@2.0.0</a>) you might have a bunch of modules at v0.x.y and you might want to change that. Well I did, so I made the <a class="title-link" href="http://lukekarrys.github.io/npm-v0-finder/">npm-v0-finder</a> (catchy, I know) to help find the offending modules. Note that this was awhile ago and now npm lists <a href="https://www.npmjs.com/~lukekarrys">all versions on a user's page</a>.
@@ -63,29 +63,29 @@ block content
 
     p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to <a href="https://www.npmjs.com/~lukekarrys">npm</a> with good docs and put the source on <a href="https://github.com/lukekarrys?tab=repositories">GitHub</a>. In fact, I've only ever had one private GitHub repo, and that was <a href="https://github.com/lukekarrys/dinahandluke.in">the website I used to ask my wife to marry me</a>.
 
-    +module({name: 'spa-crawler', gh: 'lukekarrys/spa-crawler'})
+    +module({name: 'spa-crawler', gh: 'lukekarrys/spa-crawler', npm: 'spa-crawler'})
       | Single page apps (or native web apps as I like to call them now), don't lend themselves to crawlers very well since the markup is generated clientside. <a class="title-link" href="https://github.com/lukekarrys/spa-crawler">spa-crawler</a> is built on <a href="https://github.com/jed/rndr.me">rndr.me</a> to crawl any site for internal links. The result is a list of all urls and content in the whole site. I've used this to archive old single page apps into a set of html files that could be hosted without any sort of server-side routing.
 
-    +module({name: 'local-links', gh: 'lukekarrys/local-links'})
+    +module({name: 'local-links', gh: 'lukekarrys/local-links', npm: 'local-links'})
       | Browsers have quirks. Some of those quirks are around looking at internal links within a page and determining when to override them if you're building a native web app. <a class="title-link" href="https://github.com/lukekarrys/local-link">local-links</a> wants to be your friend and not make you think about those quirks ever again. It has automated tests for the supported browser matrix so I know when I break stuff (which I've done before).
 
-    +module({name: 'js-size', gh: 'lukekarrys/js-size'})
+    +module({name: 'js-size', gh: 'lukekarrys/js-size', npm: 'js-size'})
       | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link" href="https://github.com/lukekarrys/js-size">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size. Useful when combined with curl and <a href="https://wzrd.in/">wzrd.in</a> "<pre>curl -s https://wzrd.in/standalone/local-links | js-size</pre>".
 
-    +module({name: 'hid-mapper', gh: 'lukekarrys/hid-mapper'})
+    +module({name: 'hid-mapper', gh: 'lukekarrys/hid-mapper', npm: 'hid-mapper'})
       | <a href="https://github.com/carldanley/node-gamepad">node-gamepad</a> is a great module for using various gamepads within node. I had some 3rd party SNES and N64 controllers laying around but the library didn't support them at the time. I wrote <a class="title-link" href="https://github.com/lukekarrys/hid-mapper">hid-mapper</a> as a CLI tool to take any controller and map the siginals sent from each button/joystick to a JSON config file that can be <a href="https://github.com/carldanley/node-gamepad/pull/10">consumed</a> <a href="https://github.com/carldanley/node-gamepad/pull/3">by</a> node-gamepad. Please use this to take a a USB gamepad and fly a drone with it.
 
-    +module({name: 'lessitizer / less-import-inserter', gh: ['lukekarrys/lessitizer', 'lukekarrys/less-import-inserter']})
+    +module({name: 'lessitizer / less-import-inserter', gh: ['lukekarrys/lessitizer', 'lukekarrys/less-import-inserter'], npm: ['lessitizer', 'less-import-inserter']})
       | <a href="http://lesscss.org/">less</a> is my preferred CSS preprocessor so I wrote <a class="title-link" href="http://github.com/lukekarrys/lessitizer">lessitizer</a> and <a class="title-link" href="http://github.com/lukekarrys/less-import-inserter">less-import-inserter</a>. Together they handle taking a less file containing a list of imports (like <a href="https://github.com/twbs/bootstrap/blob/66543ed112e9344d59eba343e3a45200e3ebd839/less/bootstrap.less">Bootstrap</a>) and inserting new imports to do things like override variables and mixins, and then packaging that along with your app's less into a css file or string.
 
-    +module({name: 'git-directory-deploy', gh: 'lukekarrys/git-directory-deploy'})
+    +module({name: 'git-directory-deploy', gh: 'lukekarrys/git-directory-deploy', npm: 'git-directory-deploy'})
       | I love GitHub Pages, but there can be a few annoyances around my normal workflow of developing a site in a master branch, compiling static files to a directory and then pushing that directory to a gh-pages branch. <a class="title-link" href="http://github.com/lukekarrys/git-directory-deploy">git-directory-deploy</a> is really just a wrapper for <a href="https://github.com/X1011/git-directory-deploy">the original shell script</a> that fit my criteria, and adapted to be npm installable to fit my usual workflow.
 
-    +module({name: 'moonboots-express / moonboots-static', gh: ['lukekarrys/moonboots-express', 'lukekarrys/moonboots-static']})
+    +module({name: 'moonboots-express / moonboots-static', gh: ['lukekarrys/moonboots-express', 'lukekarrys/moonboots-static'], npm: ['moonboots-express', 'moonboots-static']})
       | <a href="https://github.com/HenrikJoreteg/moonboots">moonboots</a> is a tool I've contributed to for streamlining a set of conventions for the server-side of building native web apps. <a class="title-link" href="http://github.com/lukekarrys/moonboots-static">moonboots-static</a> and <a class="title-link" href="http://github.com/lukekarrys/moonboots-express">moonboots-express</a> are two plugins I wrote for moonboots to wrap those conventions in my usual workflow of a simple dev server and then writing a directory of static files. This all uses <a href="http://browserify.org/">browserify</a> under the hood, but I've really been enjoying <a href="webpack.github.io">webpack</a> lately, so moonboots isn't my primary tool for this anymore.
 
-    +module({name: 'simple-realurl', gh: 'lukekarrys/simple-realurl'})
+    +module({name: 'simple-realurl', gh: 'lukekarrys/simple-realurl', npm: 'simple-realurl'})
       | Url shorteners are so 2008. <a class="title-link" href="http://github.com/lukekarrys/simple-realurl">simple-realurl</a> will make your urls longer (provided that they were previously shortened)!
 
-    +module({name: 'gh-streak', gh: 'lukekarrys/gh-streak'})
+    +module({name: 'gh-streak', gh: 'lukekarrys/gh-streak', npm: 'gh-streak'})
       | <a class="title-link" href="https://github.com/lukekarrys/gh-streak">gh-streak</a> is CLI/node tool to get you current streak of days with a GitHub contribtion excluding any private repos (which GitHub includes if you are logged in). This saves me a few seconds of opening an incognito window whenever I get curious about whether I need to take a break from open source.

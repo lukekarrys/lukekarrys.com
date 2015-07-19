@@ -94,6 +94,11 @@ module.exports = function(grunt) {
                     expand: true,
                     src: ['**'],
                     dest: 'public/'
+                }, {
+                    cwd: 'node_modules/octicons/octicons',
+                    expand: true,
+                    src: ['octicons.eot', 'octicons.svf', 'octicons.ttf', 'octicons.woff'],
+                    dest: 'public/css'
                 }]
             }
         },
