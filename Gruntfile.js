@@ -10,10 +10,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
+    var env = process.env.NODE_ENV || 'development';
+
     grunt.initConfig({
         //- compile main less file to output css file
         less: {
-            development: {
+            target: {
                 options: {
                     plugins: [
                         new (require('less-plugin-autoprefix'))({browsers: ['last 2 versions']})
@@ -47,13 +49,18 @@ module.exports = function(grunt) {
         //    contact/index.jade -> available at contact/
         jade: {
             target: {
-              files: [{
-                  expand: true,
-                  cwd: '_jade',
-                  src: ['**/*.jade', '!**/_*.jade'],
-                  dest: 'public',
-                  ext: '.html',
-              }]
+                options: {
+                    data: {
+                        env: env
+                    }
+                },
+                files: [{
+                      expand: true,
+                      cwd: '_jade',
+                      src: ['**/*.jade', '!**/_*.jade'],
+                      dest: 'public',
+                      ext: '.html'
+                }]
             }
         },
 

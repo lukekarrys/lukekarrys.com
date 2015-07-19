@@ -1,6 +1,10 @@
 {
   "name": "example-site",
   "version": "1.0.0",
+  "dependencies": {
+    "ampersand-dom": "^1.4.0",
+    "waypoints": "^3.1.1"
+  },
   "devDependencies": {
     "colors.css": "^2.3.0",
     "connect-livereload": "^0.5.3",
@@ -21,8 +25,8 @@
   "main": "Gruntfile.js",
   "private": true,
   "scripts": {
-    "build": "grunt build",
+    "build": "NODE_ENV=production grunt build",
     "deploy": "git-directory-deploy --directory public",
-    "start": "grunt serve"
+    "start": "NODE_ENV=development grunt serve"
   }
 }

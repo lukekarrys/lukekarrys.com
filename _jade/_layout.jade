@@ -16,7 +16,7 @@ html(lang='en')
 
     script(type='text/javascript', src='https://use.fonticons.com/1e09dd44.js')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:100,700')
-    link(rel='stylesheet', href='/css/main.min.css')
+    link(rel='stylesheet', href='/css/main' + (env === 'production' ? '.min' : '') + '.css')
 
     <!--[if lt IE 9]>
     script(type='text/javascript', src='//html5shiv.googlecode.com/svn/trunk/html5.js')
@@ -25,11 +25,12 @@ html(lang='en')
     <![endif]-->
 
   body
-    #bg
+    #background.bg
+    #background-blur.bg.bg-blur
     main.wrapper.clearfix
       block content
     footer.wrapper
-      +section('green')
+      +section('green', 'footer')
         .footer-column
           p Fun fact: that's me writing my vows on my wedding day
         .footer-column
@@ -39,6 +40,7 @@ html(lang='en')
             |  or 
             a.title-link(href="https://twitter.com/lukekarrys") @lukekarrys
 
+    script(src='/js/main' + (env === 'production' ? '.min' : '') + '.js')
     script.
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

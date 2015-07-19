@@ -47,11 +47,11 @@ p {margin: 0 0 0.4em 0;}
 
 
 // ==========================================================================
-// Content section stlye/spacing
+// Background
 // ==========================================================================
 
-#bg {
-    background: url(/bg.jpg);
+.bg {
+    background-image: url(/img/bg.jpg);
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -59,8 +59,24 @@ p {margin: 0 0 0.4em 0;}
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    z-index: -1;
+    z-index: -2;
 }
+
+.bg-blur {
+    background-image: url(/img/bg-blur.jpg);
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.bg-blur.clear {
+    opacity: 0;
+}
+
+
+// ==========================================================================
+// Content section stlye/spacing
+// ==========================================================================
 
 .wrapper {
     width: 100%;
@@ -83,7 +99,6 @@ p {margin: 0 0 0.4em 0;}
 }
 
 .inner-content {
-    -webkit-backdrop-filter: blur(5px);
     border-top: 1px solid fade(@black, 40%);
     border-bottom: 1px solid fade(@black, 40%);
     box-shadow:
@@ -187,7 +202,7 @@ a {
             color: @link;
         }
         &:hover {
-            color: darken(@link, 10%);
+            color: fade(@link, 60%);
         }
 
         &.title-link {
@@ -196,7 +211,7 @@ a {
                 color: @bg;
             }
             &:hover {
-                background-color: darken(@link, 10%);
+                background-color: fade(@link, 60%);
             }
         }
     }
