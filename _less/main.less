@@ -50,8 +50,7 @@ p {margin: 0 0 0.4em 0;}
 // Background
 // ==========================================================================
 
-.bg {
-    background-image: url(/img/bg.jpg);
+.bg, .bg-blur {
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -59,20 +58,20 @@ p {margin: 0 0 0.4em 0;}
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
+}
+
+.bg {
     z-index: -2;
 }
 
 .bg-blur {
-    background-image: url(/img/bg-blur.jpg);
     z-index: -1;
-    opacity: 1;
+    background-image: url(/img/bg-blur.jpg);
     transition: opacity 0.5s;
+    &.clear {
+        opacity: 0;
+    }
 }
-
-.bg-blur.clear {
-    opacity: 0;
-}
-
 
 // ==========================================================================
 // Content section stlye/spacing
@@ -169,7 +168,7 @@ a {
     }
     &.title-link {
         font-weight: 700;
-        padding: 0 2px;
+        padding: 0 4px;
         text-decoration: none;
     }
 }
@@ -187,6 +186,10 @@ a {
             inset 1px -5px 12px -10px rgba(0,0,0,0.6);
     }
     p:last-child {margin-bottom: 0;}
+    pre {
+        display: inline;
+        white-space: pre-line;
+    }
 }
 
 

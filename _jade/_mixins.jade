@@ -14,6 +14,7 @@ mixin project(data)
       if data.link
         a(href=data.link): i.icon.icon-external-link-square.icon-lg
         | 
+      br
       block
 
 mixin module(gh)
@@ -22,6 +23,7 @@ mixin module(gh)
     for link in gh
       a(href="https://github.com/" + link): i.icon.icon-github-square.icon-lg
       | 
+    br
     block
 
 mixin section(color, id)
