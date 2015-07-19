@@ -3,28 +3,31 @@ mixin intro()
     block
 
 mixin project(data)
-  .list-item
-    p
+  .list-item(id=data.name.toLowerCase().replace(/[ \/]/g, '-'))
+    h2
+      | !{data.name}
       if data.gh
-        a(href="https://github.com/" + data.gh): i.icon.icon-github-square.icon-lg
         | 
+        a.icon-link(href="https://github.com/" + data.gh): i.icon.icon-github-square.icon-lg
       if data.blog
-        a(href=data.blog): i.icon.icon-pencil-square.icon-lg
         | 
+        a.icon-link(href=data.blog): i.icon.icon-pencil-square.icon-lg
       if data.link
-        a(href=data.link): i.icon.icon-external-link-square.icon-lg
         | 
-      br
+        a.icon-link(href=data.link): i.icon.icon-external-link-square.icon-lg
+    p
       block
 
-mixin module(gh)
-  .list-item
-    - gh = Array.isArray(gh) ? gh : [gh]
-    for link in gh
-      a(href="https://github.com/" + link): i.icon.icon-github-square.icon-lg
-      | 
-    br
-    block
+mixin module(data)
+  .list-item(id=data.name.toLowerCase().replace(/[ \/]/g, '-'))
+    h2
+      | !{data.name}
+      - var gh = Array.isArray(data.gh) ? data.gh : [data.gh]
+      for link in gh
+        | 
+        a.icon-link(href="https://github.com/" + link): i.icon.icon-github-square.icon-lg
+    p
+      block
 
 mixin section(color, id)
   .inner-content(class='color-' + color, id=id)

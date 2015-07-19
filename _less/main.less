@@ -43,6 +43,7 @@ h1 {
     margin-bottom: 0.5em;
 }
 h2 {margin: 0.4em 0;}
+h2 a {font-size: 18px;}
 p {margin: 0 0 0.4em 0;}
 
 
@@ -135,6 +136,8 @@ footer {
     height: @footer-height;
     width: 100%;
 
+    p {margin: 0;}
+
     .inner-content {
         text-align: right;
         padding-top: 18px;
@@ -145,7 +148,7 @@ footer {
 
         .footer-column {
             text-align: center;
-            @media only screen and (min-width: 920px) {
+            @media only screen and (min-width: 1140px) {
                 text-align: left;
                 float: left;
                 &:last-child {
@@ -167,7 +170,7 @@ a {
         transition: color .3s, background-color .3s;
     }
     &.title-link {
-        font-weight: 700;
+        font-weight: 400;
         padding: 0 4px;
         text-decoration: none;
     }
@@ -188,7 +191,7 @@ a {
     p:last-child {margin-bottom: 0;}
     pre {
         display: inline;
-        white-space: pre-line;
+        word-wrap: break-word;
     }
 }
 
@@ -197,7 +200,7 @@ a {
 // Style different sections colors w/ link+text color
 // ==========================================================================
 
-.color-section (@bg, @link, @text: #ddd) {
+.color-section (@bg, @link, @hover, @text) {
     color: @text;
     background: fade(@bg, 90%);
     a {
@@ -205,16 +208,17 @@ a {
             color: @link;
         }
         &:hover {
-            color: fade(@link, 60%);
+            color: @hover;
         }
 
         &.title-link {
             &:link, &:visited {
                 background-color: @link;
-                color: @bg;
+                color: @text;
             }
             &:hover {
-                background-color: fade(@link, 60%);
+                background-color: @hover;
+                color: @bg;
             }
         }
     }
@@ -224,13 +228,9 @@ a {
 }
 
 .color-green {
-    .color-section(@green, @yellow);
+    .color-section(@purple, @navy, @lime, @white);
 }
 
 .color-blue {
-    .color-section(@blue, @navy);
-}
-
-.color-red {
-    .color-section(@orange, @maroon);
+    .color-section(@blue, @navy, @yellow, @white);
 }
