@@ -32,7 +32,7 @@ html {
 
 body {
     color: @silver;
-    font: 16px/26px 'Noto Serif', serif;
+    font: 16px 'Noto Serif', serif;
     margin: 0 0 @footer-height;
 }
 
@@ -40,16 +40,31 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     margin: 0;
+    line-height: 1.3em;
 }
 
 h1 {
     font-size: 3em;
-    line-height: 1.1em;
     margin-bottom: 0.5em;
 }
-h2 {margin: 0.4em 0;}
-h2 a {font-size: 18px;}
-p {margin: 0 0 0.4em 0; text-align: justify;}
+
+h2 {
+    margin: 0.4em 0;
+    a {font-size: 18px;}
+}
+
+p {
+    line-height: 1.75em;
+    margin: 0 0 0.4em 0;
+    text-align: justify;
+}
+
+span.code {
+    white-space: pre-wrap;
+    font-family: Courier, monospace;
+    word-wrap: break-word;
+}
+
 .icon-lg {vertical-align: 0;}
 .octicon {font-size: 24px;}
 
@@ -60,7 +75,7 @@ p {margin: 0 0 0.4em 0; text-align: justify;}
 
 .bg, .bg-blur {
     background-size: cover;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     position: fixed;
     background-position: center center;
@@ -81,16 +96,20 @@ p {margin: 0 0 0.4em 0; text-align: justify;}
     }
 }
 
-#intro {
+.pattern {
+    // See main.js scroll handler for why this is not "fixed"
+    background-attachment: scroll;
+}
+.pattern-diamonds {
     background-image: url('/img/diamonds-pattern.png');
 }
-#projects {
+.pattern-hexagons {
     background-image: url('/img/hexagons-pattern.png');
 }
-#modules {
+.pattern-squares {
     background-image: url('/img/squares-pattern.png');
 }
-#footer {
+.pattern-triangles {
     background-image: url('/img/triangles-pattern.png');
 }
 
@@ -218,10 +237,6 @@ a {
             inset 1px -5px 10px -10px rgba(0,0,0,0.6);
     }
     p:last-child {margin-bottom: 0;}
-    pre {
-        display: inline;
-        word-wrap: break-word;
-    }
 }
 
 
@@ -236,6 +251,7 @@ a {
     a {
         &:link, &:visited {
             color: @link;
+            font-weight: 700;
         }
         &:hover {
             color: @hover;
@@ -245,12 +261,18 @@ a {
             &:link, &:visited {
                 background-color: @link;
                 color: @text;
+                font-weight: 400;
             }
             &:hover {
                 background-color: @hover;
                 color: @bg;
             }
         }
+    }
+
+    span.code {
+        background-color: lighten(@link, 10%);
+        padding: 0 4px;
     }
 
     .list-item {

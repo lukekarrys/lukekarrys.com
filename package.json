@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "ampersand-dom": "^1.4.0",
+    "dom-events": "^0.1.1",
     "geopattern": "^1.2.3",
     "octicons": "^2.2.0",
     "waypoints": "^3.1.1"

@@ -2,7 +2,7 @@ extends ./_layout.jade
 include ./_mixins.jade
 
 block content
-  +section('intro', 'blue')
+  +section('intro', 'blue', 'diamonds')
     h1 Hi, my name is Luke
 
     +intro()
@@ -18,7 +18,7 @@ block content
       | When I'm not sitting down, I like to <a href="http://nikeplus.nike.com/plus/profile/IamArunner/">run</a> (or <a href="http://www.athlinks.com/athletes/lukekarrys">race</a>) and <a href="http://www.strava.com/athletes/1920700">ride my bike</a>.
 
 
-  +section('projects', 'blue')
+  +section('projects', 'blue', 'hexagons')
     h1 I make projects
 
     p My philosophy around personal projects tries to walk the intersection of fun, useless, and interesting. For all of these, I've put far more work into them than people who have used them, and I'm really proud of that.
@@ -58,7 +58,7 @@ block content
 
 
 
-  +section('modules', 'blue')
+  +section('modules', 'blue', 'squares')
     h1 I write modules
 
     p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to <a href="https://www.npmjs.com/~lukekarrys">npm</a> with good docs and put the source on <a href="https://github.com/lukekarrys?tab=repositories">GitHub</a>. In fact, I've only ever had one private GitHub repo, and that was <a href="https://github.com/lukekarrys/dinahandluke.in">the website I used to ask my wife to marry me</a>.
@@ -70,7 +70,7 @@ block content
       | Browsers have quirks. Some of those quirks are around looking at internal links within a page and determining when to override them if you're building a native web app. <a class="title-link" href="https://github.com/lukekarrys/local-link">local-links</a> wants to be your friend and not make you think about those quirks ever again. It has automated tests for the supported browser matrix so I know when I break stuff (which I've done before).
 
     +module({name: 'js-size', gh: 'lukekarrys/js-size', npm: 'js-size'})
-      | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link" href="https://github.com/lukekarrys/js-size">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size. Useful when combined with curl and <a href="https://wzrd.in/">wzrd.in</a> "<pre>curl -s https://wzrd.in/standalone/local-links | js-size</pre>".
+      | Perf matters and JS bytes over the wire is a big part of that. <a class="title-link" href="https://github.com/lukekarrys/js-size">js-size</a> works as a CLI and JS module to take a JS file and output the minified gzipped size. Useful when combined with curl and <a href="https://wzrd.in/">wzrd.in</a>: <span class="code">curl -s https://wzrd.in/standalone/local-links | js-size</span>.
 
     +module({name: 'hid-mapper', gh: 'lukekarrys/hid-mapper', npm: 'hid-mapper'})
       | <a href="https://github.com/carldanley/node-gamepad">node-gamepad</a> is a great module for using various gamepads within node. I had some 3rd party SNES and N64 controllers laying around but the library didn't support them at the time. I wrote <a class="title-link" href="https://github.com/lukekarrys/hid-mapper">hid-mapper</a> as a CLI tool to take any controller and map the siginals sent from each button/joystick to a JSON config file that can be <a href="https://github.com/carldanley/node-gamepad/pull/10">consumed</a> <a href="https://github.com/carldanley/node-gamepad/pull/3">by</a> node-gamepad. Please use this to take a a USB gamepad and fly a drone with it.

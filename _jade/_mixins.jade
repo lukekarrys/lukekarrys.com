@@ -44,7 +44,7 @@ mixin module(data)
     p
       block
 
-mixin section(id, color)
-  .inner-content(class='color-' + color, id=id, data-color=color)
+mixin section(id, color, pattern)
+  .inner-content(class=['color', 'color-' + color, 'pattern', 'pattern-' + pattern], id=id, data-color=color)
     .column
       block
