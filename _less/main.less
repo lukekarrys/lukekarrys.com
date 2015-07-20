@@ -81,6 +81,20 @@ p {margin: 0 0 0.4em 0; text-align: justify;}
     }
 }
 
+#intro {
+    background-image: url('/img/diamonds-pattern.png');
+}
+#projects {
+    background-image: url('/img/hexagons-pattern.png');
+}
+#modules {
+    background-image: url('/img/squares-pattern.png');
+}
+#footer {
+    background-image: url('/img/triangles-pattern.png');
+}
+
+
 // ==========================================================================
 // Content section stlye/spacing
 // ==========================================================================
@@ -217,7 +231,8 @@ a {
 
 .color-section (@bg, @link, @hover, @text) {
     color: @text;
-    background: fade(@bg, 90%);
+    background-color: @bg;
+
     a {
         &:link, &:visited {
             color: @link;
@@ -237,13 +252,10 @@ a {
             }
         }
     }
+
     .list-item {
         border-color: @link;
     }
-}
-
-.color-green {
-    .color-section(@purple, @lime, @navy, @white);
 }
 
 .color-blue {

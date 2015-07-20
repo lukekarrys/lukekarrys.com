@@ -27,3 +27,11 @@ new Waypoint.Inview({
         dom.removeClass(blur, 'clear');
     }
 });
+
+// var geopattern = require('geopattern');
+// var colors = require('colors.css');
+// [].forEach.call(document.querySelectorAll('.inner-content'), function (content) {
+//     var color = colors[content.getAttribute('data-color')];
+//     var pattern = geopattern.generate(content.id, {color: color});
+//     content.style['background-image'] = pattern.toDataUrl();
+// });
