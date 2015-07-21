@@ -81,24 +81,15 @@ span.code {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-}
-
-.bg {
-    z-index: -2;
+    z-index: -1;
 }
 
 .bg-blur {
-    z-index: -1;
     background-image: url(/img/bg-blur.jpg);
-    transition: opacity 0.5s;
-    &.clear {
-        opacity: 0;
-    }
 }
 
 .pattern {
-    // See main.js scroll handler for why this is not "fixed"
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 .pattern-diamonds {
     background-image: url('/img/diamonds-pattern.png');
@@ -147,8 +138,6 @@ span.code {
 }
 
 .inner-content {
-    border-top: 1px solid fade(@black, 40%);
-    border-bottom: 1px solid fade(@black, 40%);
     box-shadow:
         inset 1px 5px 9px -6px @black,
         inset 1px -5px 9px -7px @black;
