@@ -2,14 +2,14 @@ mixin _gh(data)
   - var ghLinks = Array.isArray(data) ? data : [data]
   for link in ghLinks
     | 
-    a.icon-link(href="https://github.com/" + link): i.icon.icon-github-square.icon-lg
+    a.icon-link(href="https://github.com/" + link): i.icon.icon-github-square
 
 mixin _npm(data)
   - var links = Array.isArray(data) ? data : [data]
   for link in links
     | 
     a.icon-link(href="https://www.npmjs.com/package/" + link)
-      span.octicon.octicon-package
+      i.icon.icon-package
 
 mixin intro()
   p.intro
@@ -25,13 +25,13 @@ mixin project(data)
         +_npm(data.npm)
       if data.blog
         | 
-        a.icon-link(href=data.blog): i.icon.icon-pencil-square.icon-lg
+        a.icon-link(href=data.blog): i.icon.icon-pencil-square
       if data.link
         | 
-        a.icon-link(href=data.link): i.icon.icon-external-link-square.icon-lg
+        a.icon-link(href=data.link): i.icon.icon-external-link-square
       if data.tw
         | 
-        a.icon-link(href='https://twitter.com/' + data.tw): i.icon.icon-twitter-square.icon-lg
+        a.icon-link(href='https://twitter.com/' + data.tw): i.icon.icon-twitter-square
     p
       block
 
