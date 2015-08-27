@@ -1,5 +1,6 @@
 {
-  "name": "example-site",
+  "name": "lukekarrys.com",
+  "description": "My personal site.",
   "version": "1.0.0",
   "dependencies": {
     "colors.css": "^2.3.0",
@@ -24,14 +25,22 @@
     "less-plugin-autoprefix": "^1.4.2",
     "standard": "^5.0.0-2"
   },
+  "engines": {
+    "node": "^0.10.40",
+    "npm": "^2.14.0"
+  },
   "license": "ISC",
   "main": "Gruntfile.js",
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production grunt build",
-    "deploy": "git-directory-deploy --directory public",
+    "codeship-setup": "npm run npm-version && npm install && npm run build",
+    "codeship-test": "npm run lint && npm run validate",
+    "deploy": "git-directory-deploy --directory public --username codeship --email lukekarrys@gmail.com",
+    "lint": "standard",
+    "npm-version": "npm install -g npm@`cat package.json | jq -r '.engines.npm'`",
     "start": "NODE_ENV=development grunt serve",
-    "lint": "standard"
+    "validate": "npm ls"
   },
   "standard": {
     "ignore": [
