@@ -11,7 +11,7 @@
   "devDependencies": {
     "babelify": "^6.1.3",
     "connect-livereload": "^0.5.3",
-    "git-directory-deploy": "^1.1.0",
+    "git-directory-deploy": "^1.2.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.8.0",
     "grunt-cli": "^0.1.13",
@@ -36,7 +36,7 @@
     "build": "NODE_ENV=production grunt build",
     "codeship-setup": "npm run npm-version && npm install && npm run build",
     "codeship-test": "npm run lint && npm run validate",
-    "deploy": "git-directory-deploy --verbose --directory public --username codeship --email lukekarrys@gmail.com --repo git@github.com:lukekarrys/lukekarrys.com.git",
+    "deploy": "git-directory-deploy --directory public --username lukekarrys --email lukekarrys@gmail.com --repo git@github.com:lukekarrys/lukekarrys.com.git --message='--skip-ci'",
     "lint": "standard",
     "npm-version": "npm install -g npm@`cat package.json | jq -r '.engines.npm'`",
     "start": "NODE_ENV=development grunt serve",
