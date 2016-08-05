@@ -122,7 +122,7 @@ module.exports = function (grunt) {
           middleware: function (connect, options) {
             return [
               require('connect-livereload')(),
-              connect.static(options.base[0])
+              require('serve-static')(options.base[0])
             ]
           }
         }
