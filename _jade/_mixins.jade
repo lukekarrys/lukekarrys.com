@@ -41,6 +41,9 @@ mixin module(data)
       | !{data.name}
       +_gh(data.gh)
       +_npm(data.npm)
+      if data.blog
+        | 
+        a.icon-link(href=data.blog): i.icon.icon-pencil-square
     p
       block
 
