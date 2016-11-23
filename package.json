@@ -30,8 +30,7 @@
     "standard": "^8.6.0"
   },
   "engines": {
-    "node": "^5.12.40",
-    "npm": "^3.10.5"
+    "node": "^6.0.0"
   },
   "license": "ISC",
   "main": "Gruntfile.js",
@@ -42,11 +41,10 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production grunt build",
-    "codeship-setup": "npm run npm-version && npm install && npm run build",
+    "codeship-setup": "npm install && npm run build",
     "codeship-test": "npm run lint && npm run validate",
     "deploy": "git-directory-deploy --directory public --username lukekarrys --email lukekarrys@gmail.com --repo git@github.com:lukekarrys/lukekarrys.com.git --message='--skip-ci'",
     "lint": "standard",
-    "npm-version": "npm install -g npm@`cat package.json | jq -r '.engines.npm'`",
     "start": "NODE_ENV=development grunt serve",
     "validate": "npm ls"
   },
