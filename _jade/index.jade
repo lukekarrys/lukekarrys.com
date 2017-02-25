@@ -32,7 +32,7 @@ block content
     +project({name: 'one at a time', gh: 'lukekarrys/one-at-a-time', link: 'https:/oneatatime.lukecod.es/'})
       | My #[a(href='https://2016.staticshowdown.com/') 2016 Static Showdown] entry, #[a.title-link(href='https:/oneatatime.lukecod.es/') One at a Time], is a play on those "Word at a time" stories except you can throw in emojis or animated webcam gifs of yourself too. Coded in 48 hours, and then I took a 12 hour nap.
 
-    +project({name: 'repeatone.club', gh: 'lukekarrys/repeatone.club', link: 'http://repeatone.club'})
+    +project({name: 'repeatone.club', gh: 'lukekarrys/repeatone.club', link: 'http://repeatone.club', blog: 'http://lukecod.es/2017/01/24/webtasks-as-single-serving-backends/'})
       | So yeah, .club domains were on sale for $2.88 a year, and who doesn't want to be part of a club? So I made the #[a.title-link(href='http://repeatone.club') repeatone.club] for people who want to show that they listen to the same song on repeat. Pulling data from #[a(href='http://last.fm') last.fm] with a #[a(href='https://github.com/lukekarrys/repeatone-webtask') webtask] acting as the API, it tries to make the output pretty by blurring the album artwork and pulling high contrast colors from it for the text.
 
     +project({name: 'usi', gh: 'lukekarrys/universal-static-instagram', link: 'http://insta.lukelov.es'})
@@ -79,6 +79,15 @@ block content
     h1 I write modules
 
     p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to #[a(href='https://www.npmjs.com/~lukekarrys') npm] with good docs and put the source on #[a(href='https://github.com/lukekarrys?tab=repositories') GitHub]. In fact, I've only ever had one private GitHub repo, and that was #[a(href='https://github.com/lukekarrys/dinahandluke.in') the website I used to ask my wife to marry me].
+
+    +module({name: 'dayone-templates', gh: 'lukekarrys/dayone-templates', npm: '@lukekarrys/dayone-templates'})
+      | A CLI utility to quickly create #[a(href='https://dayoneapp.com/') Day One] entries based on #[a.title-link(href='https://github.com/lukekarrys/dayone-templates') text files templates] anywhere in your filesystem. I use it to more easily tracks runs and workouts. But you could use it for whatever!
+
+    +module({name: 'organize-photos', gh: 'lukekarrys/organize-photos', npm: '@lukekarrys/organize-photos'})
+      | This is an over-engineered attempt (hey, at least it has tests) at taking photos bulk exported from our family phones and cameras, and #[a.title-link(href='https://github.com/lukekarrys/organize-photos#what-does-this-do') organizing them]. It works, but I probably wouldn't use it if I were you.
+
+    +module({name: 'ragnar-data', gh: 'lukekarrys/ragnar-data', npm: 'ragnar-data', blog: 'http://lukelov.es/articles/ragnar-distances-and-elevation'})
+      | There are a lot of different #[a(href='https://www.runragnar.com/') Ragnar] races, and one day I got semi-obsessed with sorting them based on criteria like elevation gain and total mileage. There wasn't an easy way to do that on their website, so I built #[a.title-link(href='https://github.com/lukekarrys/ragnar-data') ragnar-data] so I could fetch, format, filter, sort, and cache all that data.
 
     +module({name: 'surge-teardown-branches', gh: 'lukekarrys/surge-teardown-branches', npm: 'surge-teardown-branches', blog: 'http://lukecod.es/2016/08/18/deploying-greenkeeper-pr-branches-with-surge-and-codeship/'})
       | Run this as part of your continuous deployment workflow when using #[a(href='https://surge.sh') Surge] to #[a.title-link(href='https://github.com/lukekarrys/surge-teardown-branches') teardown merged branches]. Works great if you deploy to feature branches, but don't want your Surge account littered with the ghosts of features past.
