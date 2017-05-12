@@ -23,7 +23,7 @@
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-contrib-jade": "^1.0.0",
     "grunt-contrib-less": "^1.4.0",
-    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "less-plugin-autoprefix": "^1.5.1",
     "serve-static": "^1.11.1",
