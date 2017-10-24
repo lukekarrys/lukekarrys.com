@@ -2,19 +2,20 @@ import waypoints from './waypoints'
 import {id, style, onScroll, offScroll} from './utils'
 
 const {requestAnimationFrame: raf} = window
-const {body} = document
 const footer = id('footer')
 const blur = id('background-blur')
 const background = id('background')
+
+const body = document.body
+const scrollingElement = document.scrollingElement || document.documentElement || body
 let scrollHandler
 
 // Load the second bg image, it only gets used with JS so load it here only
 style(background, 'background-image', 'url(/img/bg.jpg)')
 
 const fadeBgOnScroll = () => {
-  const diff = body.clientHeight - body.scrollTop
+  const diff = body.clientHeight - scrollingElement.scrollTop
   const pct = Math.max(0, Math.min(1, diff / footer.clientHeight))
-  console.log(diff, pct)
   style(blur, 'opacity', pct)
 }
 
