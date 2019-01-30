@@ -3,4 +3,127 @@ include ./_mixins.jade
 
 block content
   +section('intro', 'blue', 'diamonds')
-    h1(style='margin-bottom:0') Hi, my name is Luke.
+    h1 Hi, my name is Luke
+
+    +intro()
+      | I love #[a(href='http://github.com/lukekarrys') open] #[a(href='https://www.npmjs.com/~lukekarrys') source] #[a(href='https://libraries.io/github/lukekarrys') soft]#[a(href='https://coderwall.com/lukekarrys') ware] and work at #[a(href='https://andyet.com/team/luke') &yet].
+
+    +intro()
+      | I also like to #[a(href='http://lukelov.es') share thoughts], #[a(href='http://lukecod.es') write about code], #[a(href='http://talks.lukekarrys.com') talk], and #[a(href='http://www.last.fm/user/formatfanatic') listen to music].
+
+    +intro()
+      | When I'm not sitting down, I like to #[a(href='https://www.strava.com/athletes/lukekarrys') run] (or #[a(href='http://www.athlinks.com/athletes/lukekarrys') race]) and #[a(href='http://www.strava.com/athletes/lukekarrys') ride my bike].
+
+
+  +section('projects', 'blue', 'hexagons')
+    h1 I make projects
+
+    p My philosophy around personal projects tries to walk the intersection of fun, useless, and interesting. For all of these, I've put far more work into them than people who have used them, and I'm really proud of that.
+
+    +project({name: 'tweetyourbracket.com', gh: 'tweetyourbracket', blog: 'http://lukecod.es/2014/01/25/tweet-your-bracket/', link: 'http://tweetyourbracket.com', tw: 'tweetthebracket'})
+      | I run a NCAA Bracket Challenge that requires you to tweet your entry. I call it, get this, #[a.title-link(href='http://tweetyourbracket.com') Tweet Your Bracket]! It's a whole big thing, so I made #[a(href='https://github.com/tweetyourbracket') a GitHub org] around it.
+
+    +project({name: 'gifchess.club', gh: 'lukekarrys/gifchess.club', link: 'https://gifchessclub.surge.sh'})
+      | Imagine if someone took an unflattering picture of you every time your played a chess move. That's the #[a.title-link(href='http://gifchess.club') GifChess Club]! A finalist at the #[a(href='http://2015.staticshowdown.com/winners') 2015 Static Showdown] and I published the base component for the #[a(href='https://github.com/lukekarrys/ampersand-chess-state') state] and the #[a(href='https://github.com/lukekarrys/ampersand-chess-view') view] separately.
+
+    +project({name: 'one at a time', gh: 'lukekarrys/one-at-a-time', link: 'https:/oneatatime.lukecod.es/'})
+      | My #[a(href='https://2016.staticshowdown.com/') 2016 Static Showdown] entry, #[a.title-link(href='https:/oneatatime.lukecod.es/') One at a Time], is a play on those "Word at a time" stories except you can throw in emojis or animated webcam gifs of yourself too. Coded in 48 hours, and then I took a 12 hour nap.
+
+    +project({name: 'repeatone.club', gh: 'lukekarrys/repeatone.club', link: 'https://repeatoneclub.surge.sh', blog: 'http://lukecod.es/2017/01/24/webtasks-as-single-serving-backends/'})
+      | So yeah, .club domains were on sale for $2.88 a year, and who doesn't want to be part of a club? So I made the #[a.title-link(href='http://repeatone.club') repeatone.club] for people who want to show that they listen to the same song on repeat. Pulling data from #[a(href='http://last.fm') last.fm] with a #[a(href='https://github.com/lukekarrys/repeatone-webtask') webtask] acting as the API, it tries to make the output pretty by blurring the album artwork and pulling high contrast colors from it for the text.
+
+    +project({name: 'usi', gh: 'lukekarrys/universal-static-instagram'})
+      | Host your own static Instagram site with #[a.title-link(href='https://github.com/lukekarrys/universal-static-instagram') USI]! Why? Well, #[a(href='https://github.com/lukekarrys/universal-static-instagram#what-is-this') reasons]. Built to be a fully universal (aka isomorphic) JS app with React and Webpack. I think it's pretty neat. If all you want is your Instagram data and pictures, check out the backing library #[a(href='#instagram-download') instagram-download].
+
+    +project({name: 'cubs world series tracker', gh: 'lukekarrys/cubs-world-series', link: 'http://cubsws.lukelov.es'})
+      | Ever wondered how long it's been since #[a.title-link(href='http://cubsws.lukelov.es') the Cubs won the World Series]? Or were even in the World Series? Well it's been awhile, but in case you want to be reminded of this second after second while staring at a ticking clock symbolizing over 100 years of futility, you're in luck.
+
+    +project({name: 'mlb slack status', gh: 'lukekarrys/mlb-slack-status'})
+      | Another baseball project, this little server will keep your #[a.title-link(href='https://github.com/lukekarrys/mlb-slack-status') Slack status synced with an MLB team]! Your teammates will thank you when everytime they go to DM you and they see that your favorite team lost again.
+
+    +project({name: 'metalsmith-dayone', gh: 'lukekarrys/metalsmith-dayone', blog: 'http://lukecod.es/2016/12/06/building-a-day-one-journal-as-a-static-site/', link: 'http://metalsmith-dayone.lukecod.es'})
+      | I write a lot in Day One, and some of that I wanted to share on the Internet. #[a.title-link(href='https://github.com/lukekarrys/metalsmith-dayone-example') metalsmith-dayone] is what I use to do that, and you can use it too! Be on the lookout for the blog of cute things my daughter says and does.
+
+    +project({name: 'strava bulk edit plugin', gh: 'lukekarrys/strava-bulk-edit', link: 'http://lukecod.es/2016/09/20/bulk-edit-strava-activities/'})
+      | I used to be a private Strava person, but then I realized I loved trying to get on segment leaderboards so I wanted to make them all public. So I built a #[a.title-link(href='http://lukecod.es/2016/09/20/bulk-edit-strava-activities/') bulk editing plugin] because I wanted other people to be able to do the same (and I don't like clicking a mouse over and over).
+
+    +project({name: 'twilio secret santa', gh: 'lukekarrys/secret-santa-twilio', link: 'http://lukekarrys.github.io/secret-santa-twilio/', blog: 'http://lukecod.es/2015/12/02/secret-santa-sms-with-twilio/'})
+      | My siblings and I are not all in the same place but we still wanted to do Secret Santa so I setup #[a.title-link(href='https://github.com/lukekarrys/secret-santa-twilio') Twilio Secret Santa]! For probably less than $2 (unless you have hundreds of siblings) you can use it too!
+
+    +project({name: 'emojifortun.es', gh: 'lukekarrys/emojifortun.es', link: 'http://emojifortunes.lukecod.es'})
+      | Emojis are important. We all know that. #[a.title-link(href='http://emojifortunes.lukecod.es') Emoji Fortunes] really drives that point home. Featured on #[a(href='http://time.com/99827/emoji-fortune-cookies/') time.com] and #[a(href='http://www.washingtonpost.com/news/the-intersect/wp/2014/05/17/25-internet-gems-you-mightve-missed-this-week/') washingtonpost.com] (on a listicle of weekly Internet gems right after pictues of babies with drawn on eyebrows, so yeah, I've made it).
+
+    +project({name: 'emojihaik.us', gh: 'lukekarrys/emojihaik.us', link: 'http://emojihaikus.lukecod.es'})
+      | If you thought I would only have one emoji related project, then you'd be wrong. The less popular (although I think much cooler) sister of Emoji Fortunes is #[a.title-link(href='http://emojihaikus.lukecod.es') Emoji Haikus]! Also it's built on the same #[a(href='https://github.com/lukekarrys/emoji-named-characters') two] #[a(href='https://github.com/lukekarrys/random-emoji') modules] which basically single-handedly validates the tiny modules philosophy.
+
+    +project({name: 'geohashing cli + iOS', gh: ['lukekarrys/geohash-cli', 'lukekarrys/geohashing-ios'], npm: 'geohash-cli'})
+      | Geohashing, introduced by #[a(href='https://xkcd.com/426/') xkcd #26], is a spontaneous adventure generator based on the stock market and md5 and graticules (oh my!). I've been fascinated by it since it was announced in 2008, but it took until 2015 for me to write a #[a.title-link(href='https://github.com/lukekarrys/geohash-cli') geohashing CLI] and React Native #[a.title-link(href='https://github.com/lukekarrys/geohashing-ios') iOS app]to find the day's coordinates. This is exactly as cool as it sounds. Both projects are backed by the #[a(href='https://github.com/lukekarrys/djia') same] #[a(href='https://github.com/lukekarrys/hex-frac-dec-frac') set] #[a(href='https://github.com/lukekarrys/geo-graticule ') of] #[a(href='https://github.com/lukekarrys/geohash-coordinates') modules].
+
+    +project({name: 'npm-v0-finder', gh: 'lukekarrys/npm-v0-finder', blog: 'http://lukecod.es/2014/08/15/finding-all-your-npm-v0-packages/', link: 'http://v0.lukecod.es'})
+    | If you've been releasing modules on npm for awhile (especially if you started before #[a(href='http://blog.npmjs.org/post/98131109725/npm-2-0-0') npm@2.0.0]) you might have a bunch of modules at v0.x.y and you might want to change that. Well I did, so I made the #[a.title-link(href='http://v0.lukecod.es') npm-v0-finder] (catchy, I know) to help find the offending modules. Note that this was awhile ago and now npm lists #[a(href='https://www.npmjs.com/~lukekarrys') all versions on a user&apos;s page], but if you have more than 1 page of modules this can still save you some clicks.
+
+    +project({name: 'awesome', gh: 'lukekarrys/awesome', link: 'http://who.lukelov.es'})
+      | Tell someone they are #[a.title-link(href='http://who.lukelov.es/everything') Awesome]! Hackily served at all paths of the domain by using a GitHub Pages custom 404 page, but if there's one thing I've learned, it's that it's OK to abuse HTTP for single page novelty sites.
+
+    +project({name: 'R2-D2', gh: 'lukekarrys/R2D2', blog: 'http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/'})
+      | One time I spent a few weeks figuring out Asterisk and ordering parts so I could make a socket.io signaling server ring my #[a.title-link(href='http://lukecod.es/2014/03/28/beep-boop-ringing-an-r2d2-telephone-with-obihai-asterisk-and-node/') R2-D2] telephone. It remains one of my proudest achievements that I never use.
+
+    +project({name: 'coffee calculator', gh: 'lukekarrys/coffee.lukekarrys.com', link: 'http://coffee.lukekarrys.com'})
+      | I love #[a.title-link(href='http://coffee.lukekarrys.com') coffee]. Also an old place I lived had terrible Internet in the kitchen. This confluence led to adapting an existing coffee ratio calculator for my needs, which were custom presets for my wife and I, and an appcache file so it worked offline.
+
+    +project({name: 'dinahandluke.com', gh: 'lukekarrys/dinahandluke.com', link: 'http://wedding.lukelov.es'})
+      | My sappy #[a.title-link(href='http://wedding.lukelov.es/their-story') wedding website] has probably my favorite scrolling animation that I've ever done (plus it was one of the best days of my life so I'm proud of it).
+
+
+  +section('modules', 'blue', 'squares')
+    h1 I write modules
+
+    p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to #[a(href='https://www.npmjs.com/~lukekarrys') npm] with good docs and put the source on #[a(href='https://github.com/lukekarrys?tab=repositories') GitHub]. In fact, I've only ever had one private GitHub repo, and that was #[a(href='https://github.com/lukekarrys/dinahandluke.in') the website I used to ask my wife to marry me].
+
+    +module({name: 'dayone-templates', gh: 'lukekarrys/dayone-templates', npm: '@lukekarrys/dayone-templates'})
+      | A CLI utility to quickly create #[a(href='https://dayoneapp.com/') Day One] entries based on #[a.title-link(href='https://github.com/lukekarrys/dayone-templates') text files templates] anywhere in your filesystem. I use it to more easily tracks runs and workouts. But you could use it for whatever!
+
+    +module({name: 'organize-photos', gh: 'lukekarrys/organize-photos', npm: '@lukekarrys/organize-photos'})
+      | This is an over-engineered attempt (hey, at least it has tests) at taking photos bulk exported from our family phones and cameras, and #[a.title-link(href='https://github.com/lukekarrys/organize-photos#what-does-this-do') organizing them]. It works, but I probably wouldn't use it if I were you.
+
+    +module({name: 'ragnar-data', gh: 'lukekarrys/ragnar-data', npm: 'ragnar-data', blog: 'http://lukelov.es/articles/ragnar-distances-and-elevation'})
+      | There are a lot of different #[a(href='https://www.runragnar.com/') Ragnar] races, and one day I got semi-obsessed with sorting them based on criteria like elevation gain and total mileage. There wasn't an easy way to do that on their website, so I built #[a.title-link(href='https://github.com/lukekarrys/ragnar-data') ragnar-data] so I could fetch, format, filter, sort, and cache all that data.
+
+    +module({name: 'romwod', gh: 'lukekarrys/romwod', npm: '@lukekarrys/romwod'})
+      | I keep a workout journal, so I wrote this CLI to easily grab text descriptions of #[a.title-link(href='https://github.com/lukekarrys/romwod') ROMWOD workouts]. It's as easy as #[span.code romwod date 2017-05-15 --markdown | pbcopy].
+
+    +module({name: 'surge-teardown-branches', gh: 'lukekarrys/surge-teardown-branches', npm: 'surge-teardown-branches', blog: 'http://lukecod.es/2016/08/18/deploying-greenkeeper-pr-branches-with-surge-and-codeship/'})
+      | Run this as part of your continuous deployment workflow when using #[a(href='https://surge.sh') Surge] to #[a.title-link(href='https://github.com/lukekarrys/surge-teardown-branches') teardown merged branches]. Works great if you deploy to feature branches, but don't want your Surge account littered with the ghosts of features past.
+
+    +module({name: 'html-tagged-literals', gh: 'lukekarrys/html-tagged-literals', npm: 'html-tagged-literals'})
+      | A fun learning experiment (that I actually use) with ES6's #[a(href='https://ponyfoo.com/articles/es6-template-strings-in-depth#demystifying-tagged-templates') tagged template literals] syntax. Useful helpers for minifying and unindenting #[a.title-link(href='https://github.com/lukekarrys/html-tagged-literals') HTML inside template strings].
+
+    +module({name: 'eslint-config', gh: 'lukekarrys/eslint-config', npm: '@lukekarrys/eslint-config'})
+      | My personal #[a.title-link(href='https://github.com/lukekarrys/eslint-config') ESLint config]. Probably useless to anyone except me, but I use it when I need some illusion of control in a project. Everything else uses #[a(href='http://standardjs.com/') Standard].
+
+    +module({name: 'spa-crawler', gh: 'lukekarrys/spa-crawler', npm: 'spa-crawler'})
+      | Single page apps (or native web apps as I like to call them now), don't lend themselves to crawlers very well since the markup is generated clientside. #[a.title-link(href='https://github.com/lukekarrys/spa-crawler') spa-crawler] is built on #[a(href='https://github.com/jed/rndr.me') rndr.me] to crawl any site for internal links. The result is a list of all urls and content in the whole site. I've used this to archive old single page apps into a set of html files that could be hosted without any sort of server-side routing.
+
+    +module({name: 'instagram-download', gh: 'lukekarrys/instagram-download', npm: 'instagram-download'})
+      | #[a.title-link(href='https://github.com/lukekarrys/instagram-download') Download your Instagram] JSON data and media to a directory structure convenient for self hosting.
+
+    +module({name: 'local-links', gh: 'lukekarrys/local-links', npm: 'local-links'})
+      | Browsers have quirks. Some of those quirks are around looking at internal links within a page and determining when to override them if you're building a native web app. #[a.title-link(href='https://github.com/lukekarrys/local-link') local-links] wants to be your friend and not make you think about those quirks ever again. It has automated tests for the supported browser matrix so I know when I break stuff (which I've done before).
+
+    +module({name: 'js-size', gh: 'lukekarrys/js-size', npm: 'js-size'})
+      | Perf matters and JS bytes over the wire is a big part of that. #[a.title-link(href='https://github.com/lukekarrys/js-size') js-size] works as a CLI and JS module to take a JS file and output the minified gzipped size. Useful when combined with curl and #[a(href='https://wzrd.in/') wzrd.in]: <span class="code">curl -s https://wzrd.in/standalone/local-links | js-size</span>.
+
+    +module({name: 'hid-mapper', gh: 'lukekarrys/hid-mapper', npm: 'hid-mapper'})
+      | #[a(href='https://github.com/carldanley/node-gamepad') node-gamepad] is a great module for using various gamepads within node. I had some 3rd party SNES and N64 controllers laying around but the library didn't support them at the time. I wrote #[a.title-link(href='https://github.com/lukekarrys/hid-mapper') hid-mapper] as a CLI tool to take any controller and map the siginals sent from each button/joystick to a JSON config file that can be #[a(href='https://github.com/carldanley/node-gamepad/pull/10') consumed] #[a(href='https://github.com/carldanley/node-gamepad/pull/3') by] node-gamepad. Please use this to take a a USB gamepad and fly a drone with it.
+
+    +module({name: 'lessitizer / less-import-inserter', gh: ['lukekarrys/lessitizer', 'lukekarrys/less-import-inserter'], npm: ['lessitizer', 'less-import-inserter']})
+      | #[a(href='http://lesscss.org/') less] is my preferred CSS preprocessor so I wrote #[a.title-link(href='http://github.com/lukekarrys/lessitizer') lessitizer] and #[a.title-link(href='http://github.com/lukekarrys/less-import-inserter') less-import-inserter]. Together they handle taking a less file containing a list of imports (like #[a(href='https://github.com/twbs/bootstrap/blob/66543ed112e9344d59eba343e3a45200e3ebd839/less/bootstrap.less') Bootstrap]) and inserting new imports to do things like override variables and mixins, and then packaging that along with your app's less into a css file or string.
+
+    +module({name: 'git-directory-deploy', gh: 'lukekarrys/git-directory-deploy', npm: 'git-directory-deploy'})
+      | I love GitHub Pages, but there can be a few annoyances around my normal workflow of developing a site in a master branch, compiling static files to a directory and then pushing that directory to a gh-pages branch. #[a.title-link(href='http://github.com/lukekarrys/git-directory-deploy') git-directory-deploy] is really just a wrapper for #[a(href='https://github.com/X1011/git-directory-deploy') the original shell script] that fit my criteria, and adapted to be npm installable to fit my usual workflow.
+
+    +module({name: 'moonboots-express / moonboots-static', gh: ['lukekarrys/moonboots-express', 'lukekarrys/moonboots-static'], npm: ['moonboots-express', 'moonboots-static']})
+      | #[a(href='https://github.com/HenrikJoreteg/moonboots') moonboots] is a tool I've contributed to for streamlining a set of conventions for the server-side of building native web apps. #[a.title-link(href='http://github.com/lukekarrys/moonboots-static') moonboots-static] and #[a.title-link(href='http://github.com/lukekarrys/moonboots-express') moonboots-express] are two plugins I wrote for moonboots to wrap those conventions in my usual workflow of a simple dev server and then writing a directory of static files. This all uses #[a(href='http://browserify.org/') browserify] under the hood, but I've really been enjoying #[a(href='webpack.github.io') webpack] lately, so moonboots isn't my primary tool for this anymore.
+
+    +module({name: 'simple-realurl', gh: 'lukekarrys/simple-realurl', npm: 'simple-realurl'})
+      | Url shorteners are so 2008. #[a.title-link(href='http://github.com/lukekarrys/simple-realurl') simple-realurl] will make your urls longer (provided that they were previously shortened)!
