@@ -9,6 +9,9 @@ block content
       | I love #[a(href='https://www.npmjs.com/~lukekarrys') open source] #[a(href='http://github.com/lukekarrys') software] and work at #[a(href='https://andyet.com/team/luke') &yet].
 
     +intro()
+      | I also have a #[a(href='https://resume.lukekarrys.com') resume]. <small><small>(#[a(href='https://github.com/lukekarrys/resume/blob/master/index.js') that I accidentally overengineered, but its a funny story])</small></small>
+
+    +intro()
       | I also like to #[a(href='http://lukelov.es') share thoughts], #[a(href='http://lukecod.es') write about code], and #[a(href='http://talks.lukekarrys.com') talk], and #[a(href='https://music.apple.com/profile/lukekarrys') listen to music].
 
     +intro()
@@ -75,7 +78,10 @@ block content
   +section('modules', 'blue', 'squares')
     h1 I write modules
 
-    p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to #[a(href='https://www.npmjs.com/~lukekarrys') npm] with good docs and put the source on #[a(href='https://github.com/lukekarrys?tab=repositories') GitHub]. In fact, I've only ever had one private GitHub repo, and that was #[a(href='https://github.com/lukekarrys/dinahandluke.in') the website I used to ask my wife to marry me].
+    p As I said above, I love open source. I've created and contribute to a bunch of other modules outside of ones for the projects above. I try to publish everything to #[a(href='https://www.npmjs.com/~lukekarrys') npm] with good docs and put the source on #[a(href='https://github.com/lukekarrys?tab=repositories') GitHub].
+
+    +module({name: 'gpx-route-inspector', gh: 'lukekarrys/gpx-route-inspector'})
+      | A CLI utility to take a series of interconnected GPX files and output them as #[a.title-link(href='https://github.com/lukekarrys/gpx-route-inspector/blob/master/examples/santan/output.geojson') a single GPX file] with instructions to cover the shortest path through all the routes. In graph theory language that would be the shortest closed circuit that visited every edge of the unidrected graph, but as someone who never learned much graph theory I prefer to think of it as a way to run a see a whole bunch of different stuff while I run in one area.
 
     +module({name: 'dayone-templates', gh: 'lukekarrys/dayone-templates', npm: '@lukekarrys/dayone-templates'})
       | A CLI utility to quickly create #[a(href='https://dayoneapp.com/') Day One] entries based on #[a.title-link(href='https://github.com/lukekarrys/dayone-templates') text files templates] anywhere in your filesystem. I use it to more easily tracks runs and workouts. But you could use it for whatever!
