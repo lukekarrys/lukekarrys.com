@@ -14,7 +14,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^8.0.0",
     "connect-livereload": "^0.6.0",
-    "git-directory-deploy": "^1.5.1",
     "git-validate": "^2.2.2",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
@@ -36,18 +35,13 @@
   "license": "ISC",
   "main": "Gruntfile.js",
   "pre-commit": [
-    "lint",
-    "validate"
+    "lint"
   ],
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production grunt build",
-    "codeship-setup": "npm install && npm run build",
-    "codeship-test": "npm run lint && npm run validate",
-    "deploy": "git-directory-deploy --directory public --username lukekarrys --email lukekarrys@gmail.com --repo git@github.com:lukekarrys/lukekarrys.com.git --message='--skip-ci'",
     "lint": "standard",
-    "start": "NODE_ENV=development grunt serve",
-    "validate": "npm ls"
+    "start": "NODE_ENV=development grunt serve"
   },
   "standard": {
     "ignore": [
