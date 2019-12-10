@@ -6,9 +6,8 @@ lukekarrys.com
 **Dev**
 - `npm start`
 
-**Deploy**
+**Build**
 - `npm run build`
-- `npm run deploy`
 
 **Lint**
 - `npm run lint`
