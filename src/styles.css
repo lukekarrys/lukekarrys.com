@@ -2,24 +2,62 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-a {
-  @apply underline;
+@layer base {
+  body {
+    @apply text-lg px-4 py-4 border-8 pulse-border text-gray-900;
+  }
+
+  body > * {
+    @apply mb-2 p-2 rounded;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-4xl;
+  }
+
+  body > *:last-child {
+    @apply mb-0;
+  }
+
+  a {
+    @apply border-b-2 border-gray-900;
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-b-0 focus:rounded;
+  }
+
+  ul {
+    @apply list-outside list-disc pb-3;
+  }
+
+  ul li {
+    @apply ml-5;
+  }
+
+  img {
+    @apply fixed w-1/6 top-8 right-8 rounded-full border-4 shadow-lg m-0 p-0;
+  }
 }
 
-.pulse-border-colors {
-  @apply border-pink;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+@layer utilities {
+  @variants motion-safe {
+    .pulse-border {
+      @apply border-pink;
+      animation: pulseBorder 60s infinite;
+    }
 
-@keyframes pulse {
-  0%,
-  100% {
-    border-color: theme("colors.pink");
-  }
-  33% {
-    border-color: theme("colors.cyan");
-  }
-  66% {
-    border-color: theme("colors.yellow");
+    @keyframes pulseBorder {
+      0%,
+      32%,
+      100% {
+        border-color: theme("colors.pink");
+      }
+      33%,
+      65% {
+        border-color: theme("colors.cyan");
+      }
+      66%,
+      99% {
+        border-color: theme("colors.yellow");
+      }
+    }
   }
 }

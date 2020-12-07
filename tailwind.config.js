@@ -9,4 +9,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {
+      borderWidth: ["focus"],
+      borderRadius: ["focus"],
+    },
+  },
 }

@@ -10,14 +10,17 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
-    "cpr": "^3.0.1",
+    "cpy-cli": "^3.1.1",
     "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "if-env": "^1.0.4",
     "mkdirp": "^1.0.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.1.14",
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "serve": "^11.3.2"
   },
   "homepage": "https://github.com/lukekarrys/lukekarrys.com#readme",
   "keywords": [],
@@ -30,10 +33,13 @@
   },
   "scripts": {
     "build": "run-p build:*",
+    "build:assets": "cpy 'assets/*' build",
     "build:css": "postcss src/styles.css -o build/styles.css",
-    "build:html": "cpr src/*.html build/ -o",
-    "build:assets": "cpr assets build -o",
-    "dev": "nodemon --exec 'npm run build' --ignore 'build/' -e 'html,css,js'",
+    "build:html": "cpy 'src/*.html' build && npm run minify-html",
+    "dev": "run-p dev:*",
+    "dev:build": "nodemon --exec 'npm run build' --ignore 'build/' -e 'html,css,js'",
+    "dev:serve": "serve build -n",
+    "minify-html": "if-env NODE_ENV=production && html-minifier --collapse-whitespace --input-dir build --output-dir build --file-ext html || true",
     "prebuild": "mkdirp build"
   }
 }
