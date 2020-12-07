@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-lg px-4 py-4 border-8 pulse-border text-gray-900;
+    @apply text-lg px-4 py-4 text-gray-900 dark:bg-gray-900;
   }
 
   body > * {
@@ -24,6 +24,10 @@
     @apply focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-b-0 focus:rounded;
   }
 
+  button {
+    @apply focus:outline-none focus:ring-2 focus:ring-gray-900;
+  }
+
   ul {
     @apply list-outside list-disc pb-3;
   }
@@ -31,9 +35,15 @@
   ul li {
     @apply ml-5;
   }
+}
 
-  img {
-    @apply fixed w-1/6 top-8 right-8 rounded-full border-4 shadow-lg m-0 p-0;
+@layer components {
+  .profile {
+    @apply overflow-hidden fixed w-1/6 top-8 right-8 m-0 p-0 rounded-full border-4 shadow-xl border-pink;
+  }
+
+  .body-border {
+    @apply border-8 border-pink;
   }
 }
 
@@ -56,6 +66,29 @@
       }
       66%,
       99% {
+        border-color: theme("colors.yellow");
+      }
+    }
+  }
+
+  @variants motion-safe {
+    .pulse-404 {
+      @apply bg-pink;
+      animation: pulse404 6s infinite;
+    }
+
+    @keyframes pulse404 {
+      0%,
+      100% {
+        background-color: theme("colors.pink");
+        border-color: theme("colors.pink");
+      }
+      33% {
+        background-color: theme("colors.cyan");
+        border-color: theme("colors.cyan");
+      }
+      66% {
+        background-color: theme("colors.yellow");
         border-color: theme("colors.yellow");
       }
     }

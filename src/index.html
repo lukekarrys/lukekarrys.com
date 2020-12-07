@@ -10,18 +10,24 @@
     <title>Luke Karrys</title>
     <meta name="description" content="It&rsquo;s me, Luke." />
     <link rel="icon" href="/icon.png" type="image/png" />
+    <script src="/script.js"></script>
     <link href="/styles.css" rel="stylesheet" />
   </head>
-  <body class="motion-safe:pulse-border">
+  <body class="body-border motion-safe:pulse-border">
     <h1 class="bg-yellow">I&rsquo;m Luke Karrys</h1>
 
     <p class="bg-cyan">That&rsquo;s me <span>→</span></p>
 
-    <img
-      src="/profile.png"
-      alt="A picture of me with foggy sunglasses and a beard."
-      class="motion-safe:pulse-border"
-    />
+    <button
+      id="toggle-dark"
+      aria-label="Toggle dark mode"
+      class="motion-safe:pulse-border profile"
+    >
+      <img
+        src="/profile.png"
+        alt="A picture of me with foggy sunglasses and a beard."
+      />
+    </button>
 
     <p class="bg-pink">Find some software I&rsquo;ve written:</p>
 

@@ -20,7 +20,8 @@
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
     "prettier": "^2.2.1",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "terser": "^5.5.1"
   },
   "homepage": "https://github.com/lukekarrys/lukekarrys.com#readme",
   "keywords": [],
@@ -36,10 +37,11 @@
     "build:assets": "cpy 'assets/*' build",
     "build:css": "postcss src/styles.css -o build/styles.css",
     "build:html": "cpy 'src/*.html' build && npm run minify-html",
-    "dev": "run-p dev:*",
-    "dev:build": "nodemon --exec 'npm run build' --ignore 'build/' -e 'html,css,js'",
-    "dev:serve": "serve build -n",
+    "build:js": "if-env NODE_ENV=production && terser 'src/script.js' --compress --mangle --toplevel --output build/script.js || cpy 'src/script.js' build",
+    "dev": "run-p nodemon serve",
     "minify-html": "if-env NODE_ENV=production && html-minifier --collapse-whitespace --input-dir build --output-dir build --file-ext html || true",
-    "prebuild": "mkdirp build"
+    "nodemon": "nodemon --exec 'npm run build' --ignore 'build/' -e 'html,css,js'",
+    "prebuild": "mkdirp build",
+    "serve": "serve build -n"
   }
 }
