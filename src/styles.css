@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+a {
+  @apply underline;
+}
+
+.pulse-border-colors {
+  @apply border-pink;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    border-color: theme("colors.pink");
+  }
+  33% {
+    border-color: theme("colors.cyan");
+  }
+  66% {
+    border-color: theme("colors.yellow");
+  }
+}
