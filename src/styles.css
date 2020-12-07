@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-lg px-4 py-4 text-gray-900 dark:bg-gray-900;
+    @apply text-lg p-4 text-gray-900 dark:bg-gray-900 border-8;
   }
 
   body > * {
@@ -43,7 +43,7 @@
   }
 
   .body-border {
-    @apply border-8 border-pink;
+    @apply border-pink;
   }
 }
 
