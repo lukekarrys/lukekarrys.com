@@ -10,6 +10,15 @@
     min-height: calc(100 * var(--vh));
   }
 
+  /* Tailwind is using the "class" darkMode strategy since that makes
+   * it easier to toggle dark mode via user preference, but this is a
+   * a fallback so that the background changes with no JS */
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-gray-900;
+    }
+  }
+
   body > * {
     @apply mb-2 p-2 rounded;
   }
