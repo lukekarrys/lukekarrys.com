@@ -14,7 +14,7 @@
    * it easier to toggle dark mode via user preference, but this is a
    * a fallback so that the background changes with no JS */
   @media (prefers-color-scheme: dark) {
-    body {
+    :not(.light) body {
       @apply bg-gray-900;
     }
   }

@@ -1,51 +1,64 @@
-const darkModeMedia = window.matchMedia("(prefers-color-scheme: dark)").matches
-const html = document.querySelector("html")
+const root = document.querySelector(":root")
 
 const DARK = "dark"
 const LIGHT = "light"
 const NONE = "none"
 
-const isTheme = (val) => {
+const getTheme = () => {
   if (localStorage.theme === DARK) {
-    return DARK === val
+    return DARK
   } else if (localStorage.theme === LIGHT) {
-    return LIGHT === val
+    return LIGHT
   }
-  return NONE === val
+  return NONE
 }
 
-const updateHtmlClass = () => {
-  if (isTheme(DARK) || (isTheme(NONE) && darkModeMedia)) {
-    html.classList.add("dark")
+const darkModeMedia = () =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+
+const updateHtmlClass = (e) => {
+  const theme = getTheme()
+
+  // Do nothing on the initial call if there is no theme set
+  // so that the default css based on the media query takes over
+  if (!e && theme === NONE) {
+    return
+  }
+
+  if (theme === DARK || (theme === NONE && darkModeMedia())) {
+    root.classList.add("dark")
+    root.classList.remove("light")
   } else {
-    html.classList.remove("dark")
+    root.classList.remove("dark")
+    root.classList.add("light")
   }
 }
 
 const updateVh = () =>
-  document
-    .querySelector(":root")
-    .style.setProperty("--vh", window.innerHeight / 100 + "px")
+  root.style.setProperty("--vh", window.innerHeight / 100 + "px")
 
 window.addEventListener("storage", updateHtmlClass)
+window.addEventListener("resize", updateVh)
 
+// Set initial state
 updateHtmlClass()
+updateVh()
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  document.getElementById("toggle-dark").addEventListener("click", () => {
-    if (isTheme(NONE)) {
-      localStorage.theme = darkModeMedia ? "light" : "dark"
-    } else if (isTheme(DARK)) {
-      localStorage.theme = "light"
-    } else if (isTheme(LIGHT)) {
-      localStorage.theme = "dark"
+  // Put this one inside domready since it used an element on the page
+  document.getElementById("toggle-dark").addEventListener("click", (e) => {
+    const theme = getTheme()
+
+    if (theme === NONE) {
+      // If no theme has ever been set, then set it to the opposite
+      // of the user's media query
+      localStorage.theme = darkModeMedia() ? LIGHT : DARK
+    } else if (theme === DARK) {
+      localStorage.theme = LIGHT
+    } else if (theme === LIGHT) {
+      localStorage.theme = DARK
     }
-    updateHtmlClass()
+
+    updateHtmlClass(e)
   })
-
-  updateVh()
-})
-
-window.addEventListener("resize", () => {
-  updateVh()
 })
