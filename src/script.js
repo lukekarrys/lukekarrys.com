@@ -22,6 +22,11 @@ const updateHtmlClass = () => {
   }
 }
 
+const updateVh = () =>
+  document
+    .querySelector(":root")
+    .style.setProperty("--vh", window.innerHeight / 100 + "px")
+
 window.addEventListener("storage", updateHtmlClass)
 
 updateHtmlClass()
@@ -37,4 +42,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
     updateHtmlClass()
   })
+
+  updateVh()
+})
+
+window.addEventListener("resize", () => {
+  updateVh()
 })

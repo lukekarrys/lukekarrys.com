@@ -5,6 +5,9 @@
 @layer base {
   body {
     @apply text-lg p-4 text-gray-900 dark:bg-gray-900 border-8;
+    border-radius: 0 0 env(safe-area-inset-bottom, 0px)
+      env(safe-area-inset-bottom, 0px);
+    min-height: calc(100 * var(--vh));
   }
 
   body > * {
@@ -39,7 +42,8 @@
 
 @layer components {
   .profile {
-    @apply overflow-hidden fixed w-1/6 top-8 right-8 m-0 p-0 rounded-full border-4 shadow-xl border-pink;
+    @apply overflow-hidden fixed w-1/6 top-8 right-8 m-0 p-0;
+    @apply rounded-full border-4 shadow-xl border-pink;
   }
 
   .body-border {
