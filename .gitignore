@@ -117,3 +117,6 @@ dist
 
 # build
 build/
+
+localhost.crt
+localhost.key

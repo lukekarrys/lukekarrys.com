@@ -42,6 +42,7 @@
     "minify-html": "if-env NODE_ENV=production && html-minifier --collapse-whitespace --input-dir build --output-dir build --file-ext html || true",
     "nodemon": "nodemon --exec 'npm run build' --ignore 'build/' -e 'html,css,js'",
     "prebuild": "mkdirp build",
-    "serve": "serve build -n"
+    "serve": "serve build -n",
+    "serve:https": "npm run serve -- --ssl-cert localhost.crt --ssl-key localhost.key"
   }
 }
