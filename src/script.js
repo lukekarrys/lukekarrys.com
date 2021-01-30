@@ -45,20 +45,23 @@ updateHtmlClass()
 updateVh()
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  // Put this one inside domready since it used an element on the page
-  document.getElementById("toggle-dark").addEventListener("click", (e) => {
-    const theme = getTheme()
+  const darkModeBtn = document.getElementById("toggle-dark")
+  if (darkModeBtn) {
+    // Put this one inside domready since it used an element on the page
+    darkModeBtn.addEventListener("click", (e) => {
+      const theme = getTheme()
 
-    if (theme === NONE) {
-      // If no theme has ever been set, then set it to the opposite
-      // of the user's media query
-      localStorage.theme = darkModeMedia() ? LIGHT : DARK
-    } else if (theme === DARK) {
-      localStorage.theme = LIGHT
-    } else if (theme === LIGHT) {
-      localStorage.theme = DARK
-    }
+      if (theme === NONE) {
+        // If no theme has ever been set, then set it to the opposite
+        // of the user's media query
+        localStorage.theme = darkModeMedia() ? LIGHT : DARK
+      } else if (theme === DARK) {
+        localStorage.theme = LIGHT
+      } else if (theme === LIGHT) {
+        localStorage.theme = DARK
+      }
 
-    updateHtmlClass(e)
-  })
+      updateHtmlClass(e)
+    })
+  }
 })
